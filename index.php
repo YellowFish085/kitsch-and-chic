@@ -21,6 +21,9 @@
 				<nav class="row">
 					<ul class="col-xs-12 col-sm-12 main-nav">
 						<li>
+							<a class="dropdown-item" href="/" title="Accueil">Accueil</a>
+						</li>
+						<li>
 							<span type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    Interieur
 						  </span>
