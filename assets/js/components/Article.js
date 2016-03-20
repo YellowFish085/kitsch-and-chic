@@ -24,16 +24,18 @@ var Article = (function() {
 			},
 
 			all: function () {
-				return articles
+				return articles.articles
 			},
 
 			find: function (id) {
+				var r = null
 				$.each(articles.articles, function(i, article) {
 			    if (article.id == id) {
-			        return r
+			        r = article
+			        return false
 			    }
 				})
-				return null
+				return r
 			},
 
 			findByCategory: function(category) {
