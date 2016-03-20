@@ -6,7 +6,10 @@ var TemplateEngine = (function() {
 		var element = el
 
 		function getArticleTemplate(datas) {
-			var template = '<p>Article {{name}}</p>'
+			var template 	= '<div>'
+										+ '	<p>Article {{name}}</p>'
+										+ '</div>'
+
 			Mustache.parse(template)
 
 			var rendered = Mustache.render(template, datas)
@@ -14,7 +17,11 @@ var TemplateEngine = (function() {
 		}
 
 		function getArticlesTemplate(datas) {
-			var template = '<div><h2>{{title}}</h2><h3>{{author}}</h3></div>'
+			var template 	= '<div>'
+										+ '	<h2>{{title}}</h2>'
+										+	'	<h3>{{author}}</h3>'
+										+ '</div>'
+
 			Mustache.parse(template)
 
 			var rendered = ''
