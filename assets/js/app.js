@@ -15,9 +15,9 @@ $(document).ready(function() {
 
 // Init app
 function initApp() {
-	TemplateEngine.getInstance('content')
+	TemplateEngine.initInstance('content')
 
-	Article.getInstance().loadArticles()
+	Article.initDatas()
 		.done( function() {
 			processView()
 		})

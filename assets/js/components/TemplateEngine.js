@@ -55,15 +55,16 @@ var TemplateEngine = (function() {
 	}
 
 	return {
-		// Get the singleton instance
-		getInstance: function (element = 'content') {
+		initInstance: function(element = 'content') {
 			if (!instance) {
 				instance = init(element)
-				return instance
 			}
-			else {
-				return instance
-			}
+		},
+		
+		// Get the singleton instance
+		getInstance: function () {
+			this.initInstance()
+			return instance
 		}
 	}
 })()

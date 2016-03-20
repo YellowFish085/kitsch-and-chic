@@ -2,7 +2,6 @@ var Article = (function() {
 	var instance
 
 	function init() {
-		// Singleton
 		// Private
 		var articles
 
@@ -50,15 +49,21 @@ var Article = (function() {
 	}
 
 	return {
-		// Get the singleton instance
-		getInstance: function () {
+		initInstance: function() {
 			if (!instance) {
 				instance = init()
-				return instance
 			}
-			else {
-				return instance
-			}
+		},
+
+		initDatas: function() {
+			this.initInstance()
+			return instance.loadArticles()
+		},
+
+		// Get the singleton instance
+		getInstance: function () {
+			this.initInstance()
+			return instance
 		}
 	}
 })()
