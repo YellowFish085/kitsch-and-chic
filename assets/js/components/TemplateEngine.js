@@ -7,18 +7,23 @@ var TemplateEngine = (function() {
 
 		function getArticleTemplate(datas) {
 			var template 	= '<div>'
-										+ '	<p>Article {{name}}</p>'
+										+ '	<h1>{{name}}</h1>'
+										+ '	<h2>{{author}}</h2>'
+										+ '	<p>{{content}}</p>'
 										+ '</div>'
 
 			Mustache.parse(template)
 
 			var rendered = Mustache.render(template, datas)
+
 			console.log(rendered)
+
+			document.getElementById(el).innerHTML = rendered
 		}
 
 		function getArticlesTemplate(datas) {
 			var template 	= '<div>'
-										+ '	<h2>{{title}}</h2>'
+										+ '	<h2><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
 										+	'	<h3>{{author}}</h3>'
 										+ '</div>'
 
@@ -34,7 +39,7 @@ var TemplateEngine = (function() {
 
 		// Public
 		return {
-			getTemplate: function(template, datas) {
+			renderTemplate: function(template, datas) {
 				switch (template) {
 					case 'article':
 						getArticleTemplate(datas)
