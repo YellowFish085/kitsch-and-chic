@@ -4,7 +4,6 @@ var TemplateEngine = (function() {
 	function init(el) {
 		// Private
 		var element = el
-		console.log(element)
 
 		function getArticleTemplate(datas) {
 			var template = '<p>Article {{name}}</p>'
@@ -22,7 +21,6 @@ var TemplateEngine = (function() {
 			$.each(datas, function(i, article) {
 				rendered += Mustache.render(template, article)
 			})
-			console.log(rendered)
 
 			document.getElementById(el).innerHTML = rendered
 		}
