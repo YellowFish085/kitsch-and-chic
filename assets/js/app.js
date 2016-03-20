@@ -43,8 +43,6 @@ function setEvents() {
 
 // Check the url params and call the template method
 function processView() {
-	TemplateEngine.getInstance().displayPreloader()
-
 	var params = getUrlParameters()
 
 	if (params.length == 1) {
@@ -73,35 +71,15 @@ function processView() {
 }
 
 function displayAllArticles() {
-	/*
-	$.ajax({
-		url: '/ajax/article.php',
-		type: 'POST',
-		data: {action: 'list', data: Article.getInstance().all()}
-	})
-		.done( function(data) {
-	    $("#content").html(data)
-		})
-	*/
+	TemplateEngine.getInstance().renderTemplate('articles', Article.getInstance().all())
 }
 
 function displayArticles(category) {
-	TemplateEngine.getInstance().getTemplate('articles', Article.getInstance().findByCategory(category))
+	TemplateEngine.getInstance().renderTemplate('articles', Article.getInstance().findByCategory(category))
 }
 
-function displayArticle( id) {
-	/*
-	var article = Article.getInstance().find(id)
-
-	$.ajax({
-		url: '/ajax/article.php',
-		type: 'POST',
-		data: {action: 'show', data: article}
-	})
-		.done( function(data) {
-	    $("#content").html(data)
-		})
-	*/
+function displayArticle(id) {
+	TemplateEngine.getInstance().renderTemplate('article', Article.getInstance().find(id))
 }
 
 // Helper methods
