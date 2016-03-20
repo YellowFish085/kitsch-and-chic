@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$.when(
+		$.getScript('/assets/js/components/Categorie.js'),
 		$.getScript('/assets/js/components/Article.js'),
 		$.getScript('/assets/js/components/TemplateEngine.js'),
 		$.getScript('/assets/js/components/App.js'),
@@ -8,7 +9,7 @@ $(document).ready(function() {
 		})
 	).done(function(){
 		//initApp()
-		new App({'element': 'content'})
+		new App({'element': 'app'})
 	})
 	.fail(function(e) {
 		console.error(e.responseText)

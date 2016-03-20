@@ -57,14 +57,18 @@ var App = function(datas) {
 		TemplateEngine.getInstance().renderTemplate('article', Article.getInstance().find(id))
 	}
 
+	var displayHtml = function() {
+		TemplateEngine.getInstance().renderTemplate('html', Category.getInstance().all())	
+	}
+
 	var setPageMeta = function(type, datas) {
 		if (type == 'article') {
 			var article = Article.getInstance().find(datas)
-			document.title = toCamelCase(article.title)
+			document.title = (article) ? toCamelCase(article.title) : ''
 		}
 		else if (type == 'category') {
-			console.log(datas)
-			document.title = toCamelCase(datas)
+			var category = Category.getInstance().find(datas)
+			document.title = (category) ? toCamelCase(category.title) : 'Accueil'
 		}
 	}
 
@@ -88,19 +92,24 @@ var App = function(datas) {
     });
 	}
 
-
 	// Public
 	this.init = function(datas) {
 		TemplateEngine.initInstance(datas.element)
 
-		Article.initDatas()
-			.done( function() {
-				processView()
+		$.when(
+			Article.initDatas(),
+			Category.initDatas(),
+			$.Deferred(function(deferred){
+				$(deferred.resolve)
 			})
-			.fail( function() {
-				alert('ERROR: Could not load the json file.')
-			})
-
+		).done(function(){
+			displayHtml()
+			processView()
+		})
+		.fail(function(e) {
+			console.error("Error while loading datas.")
+		})
+		
 		setEvents()
 	}
 

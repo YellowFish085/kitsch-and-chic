@@ -28,7 +28,7 @@ var Article = (function() {
 			},
 
 			find: function (id) {
-				var r = null
+				var r = false
 				$.each(articles.articles, function(i, article) {
 			    if (article.id == id) {
 			        r = article
