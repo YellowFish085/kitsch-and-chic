@@ -18,25 +18,30 @@ var App = function(datas) {
 		if (params.length == 1) {
 			if (params[0] == 'about') {
 				console.Log('|| Display about')
+				setPageMeta('category', params[0])
 			}
 			else {
 				console.log('|| Display articles from ' + params[0] + ' category')
 				displayArticles(params[0])
+				setPageMeta('category', params[0])
 			}
 		}
 		else if (params.length == 2) {
 			if (params[0] == 'article') {
 				console.log('|| Display article ' + params[1])
 				displayArticle(params[1])
+				setPageMeta('article', params[1])
 			}
 			else {
 				console.log('|| Display articles from ' + params[0] + '/' + params[1] + ' subcategory')
 				displayArticles(params[1])
+				setPageMeta('category', params[1])
 			}
 		}
 		else {
 			console.log('|| Display all articles')
 			displayAllArticles()
+			setPageMeta('category', 'accueil')
 		}
 	}
 
@@ -52,6 +57,18 @@ var App = function(datas) {
 		TemplateEngine.getInstance().renderTemplate('article', Article.getInstance().find(id))
 	}
 
+	var setPageMeta = function(type, datas) {
+		if (type == 'article') {
+			var article = Article.getInstance().find(datas)
+			document.title = toCamelCase(article.title)
+		}
+		else if (type == 'category') {
+			console.log(datas)
+			document.title = toCamelCase(datas)
+		}
+	}
+
+	// Private helpers
 	var getUrlParameters = function() {
 		var params = window.location.pathname.split("/");
 
@@ -64,6 +81,13 @@ var App = function(datas) {
 
 		return params;
 	}
+
+	var toCamelCase = function(input) {
+		return input.replace(/-/g, ' ').replace(/(?:^|\s)\w/g, function(match) {
+        return match.toUpperCase();
+    });
+	}
+
 
 	// Public
 	this.init = function(datas) {
