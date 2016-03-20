@@ -4,12 +4,14 @@
 			"id": 1,
 			"title": "Article 1",
 			"author": "Author 1",
+			"categories": ["cuisine", "salle-de-bain"],
 			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
 		},
 		{
 			"id": 2,
 			"title": "Article 2",
 			"author": "Author 2",
+			"categories": ["cuisine", "insolites"],
 			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!"
 		}
 	]
