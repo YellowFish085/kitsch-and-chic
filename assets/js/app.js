@@ -33,8 +33,12 @@ function setEvents() {
 	$('body').on('click', 'a', function(e) {
 		e.preventDefault()
 		History.pushState(null, e.target.title, e.target.href)
-		processView()
 	})
+
+	window.onstatechange = function() {
+		console.log('|| state change')
+		processView()
+	}
 }
 
 // Check the url params and call the template method
@@ -45,25 +49,25 @@ function processView() {
 
 	if (params.length == 1) {
 		if (params[0] == 'about') {
-			console.Log('display about')
+			console.Log('|| Display about')
 		}
 		else {
-			console.log('display articles from ' + params[0] + ' category')
+			console.log('|| Display articles from ' + params[0] + ' category')
 			displayArticles(params[0])
 		}
 	}
 	else if (params.length == 2) {
 		if (params[0] == 'article') {
-			console.log('display article ' + params[1])
+			console.log('|| Display article ' + params[1])
 			displayArticle(params[1])
 		}
 		else {
-			console.log('display articles from ' + params[0] + '/' + params[1] + ' subcategory')
+			console.log('|| Display articles from ' + params[0] + '/' + params[1] + ' subcategory')
 			displayArticles(params[1])
 		}
 	}
 	else {
-		console.log('display all articles')
+		console.log('|| Display all articles')
 		displayAllArticles()
 	}
 }
