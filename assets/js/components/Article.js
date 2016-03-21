@@ -5,6 +5,27 @@ var Article = (function() {
 		// Private
 		var articles
 
+		function setArticlesCategories(datas) {
+			var r = []
+			$.each(datas, function(i, article) {
+				if (article.categories) {
+					var article = setArticleCategories(article)
+				}
+				r.push(article)
+			})
+			return r
+		}
+
+		function setArticleCategories(article) {
+			var categories = []
+			$.each(article.categories, function(i, category) {
+				categories.push(Category.getInstance().find(category))
+			})
+			article.categories = categories
+
+			return article
+		}
+
 		return {
 			// Public
 			loadArticles: function() {
@@ -24,17 +45,19 @@ var Article = (function() {
 			},
 
 			all: function () {
-				return articles.articles
+				var r = $.extend(true, {}, articles.articles)
+				return setArticlesCategories(r)
 			},
 
 			find: function (id) {
 				var r = null
 				$.each(articles.articles, function(i, article) {
 			    if (article.id == id) {
-			        r = article
+			        r = $.extend(true, {}, article)
 			        return false
 			    }
 				})
+				r = setArticleCategories(r)
 				return r
 			},
 
@@ -42,9 +65,10 @@ var Article = (function() {
 				var r = []
 				$.each(articles.articles, function(i, article) {
 					if ($.inArray(category, article.categories) != -1) {
-						r.push(article)
+						r.push($.extend(true, {}, article))
 					}
 				})
+				r = setArticlesCategories(r)
 				return r
 			}
 		}

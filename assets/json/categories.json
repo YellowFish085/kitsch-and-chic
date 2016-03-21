@@ -1,0 +1,51 @@
+{
+	"categories": [
+		{
+			"slug": "intetieurs",
+			"url": "/interieurs",
+			"title": "Interieurs",
+			"subcategories": [
+				{
+					"slug": "cuisine",
+					"url": "/interieurs/cuisine",
+					"title": "Cuisine"
+				},
+				{
+					"slug": "salle-de-bain",
+					"url": "/interieurs/salle-de-bain",
+					"title": "Salle de bain"
+				},
+				{
+					"slug": "chambre",
+					"url": "/interieurs/chambre",
+					"title": "Chambre"
+				},
+				{
+					"slug": "sejour",
+					"url": "/interieurs/sejour",
+					"title": "Sejour"
+				}
+			]
+		},
+		{
+			"slug": "astuces",
+			"url": "/astuces",
+			"title": "Astuces"
+		},
+		{
+			"slug": "createurs",
+			"url": "/createurs",
+			"title": "Créateurs"
+		},
+		{
+			"slug": "insolites",
+			"url": "/insolites",
+			"title": "Insolites"
+		},
+		{
+			"slug": "passion-kitsch",
+			"url": "/passion-kitsch",
+			"title": "Passion kitsch"
+		}
+	]
+}
