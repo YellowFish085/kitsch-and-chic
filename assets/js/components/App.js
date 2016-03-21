@@ -69,7 +69,13 @@ var App = function(datas) {
 	}
 
 	var displayHtml = function() {
-		return TemplateEngine.getInstance().renderTemplate('html', Category.getInstance().all())	
+		return TemplateEngine.getInstance().renderHtml(
+			{
+				"header": {
+					"categories": Category.getInstance().all(),
+					"article": Article.getInstance().find(1)
+				}
+			})	
 	}
 
 	var setPageMeta = function(type, item) {

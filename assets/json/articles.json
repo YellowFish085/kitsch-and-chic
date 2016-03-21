@@ -5,14 +5,17 @@
 			"title": "Article 1",
 			"author": "Author 1",
 			"categories": ["cuisine", "salle-de-bain"],
-			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			"image": "http://vignette4.wikia.nocookie.net/dofus/images/2/27/Indigo_Blop.png/revision/latest?cb=20110724140855",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
+			"content": "<p>Lorem ipsum dolor sit amet, <img src=\"http://vignette4.wikia.nocookie.net/dofus/images/2/27/Indigo_Blop.png/revision/latest?cb=20110724140855\" /> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
 		},
 		{
 			"id": 2,
 			"title": "Article 2",
 			"author": "Author 2",
 			"categories": ["cuisine", "insolites"],
-			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!"
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
+			"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!</p>"
 		}
 	]
 }

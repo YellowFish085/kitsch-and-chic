@@ -21,11 +21,12 @@ var TemplateEngine = (function() {
 		}
 
 		function renderArticleTemplate(datas) {
-			var template 	= '<div>'
-										+ '	<h1>{{name}}</h1>'
-										+ '	<h2>{{author}}</h2>'
-										+ '	<h3>{{{categoriesLinks}}}</h3>'
-										+ '	<p>{{content}}</p>'
+			var template 	= '<div class="article">'
+										+ ' {{#image}}<img src="{{image}}" />{{/image}}'
+										+ '	<h1 class="article-title">{{title}}</h1>'
+										+ '	<h2 class="article-author">{{author}}</h2>'
+										+ '	<span class="article-categories">{{{categoriesLinks}}}</span>'
+										+ '	<div class="article-content">{{{content}}}</div>'
 										+ '</div>'
 
 			Mustache.parse(template)
@@ -41,15 +42,20 @@ var TemplateEngine = (function() {
 		}
 
 		function renderArticlesTemplate(datas) {
-			var template 	= '<div>'
-										+ '	<h2><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
-										+ '	<h3>{{{categoriesLinks}}}</h3>'
-										+	'	<h3>{{author}}</h3>'
-										+ '</div>'
+			var articleListTemplate = '<div class="row article-list">{{{articles}}}</div>'
 
-			Mustache.parse(template)
+			Mustache.parse(articleListTemplate)
 
-			var rendered = ''
+			var articleTemplate = '<div class="article-list-item col-xs-12 col-sm-3">'
+													+ ' {{#image}}<img src="{{image}}" />{{/image}}'
+													+ '	<h2 class="article-list-item-title"><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
+													+ '	<span class="arcitle-list-item-categories">{{{categoriesLinks}}}</span>'
+													+	'	<h3 class="article-list-item-author">{{author}}</h3>'
+													+ '</div>'
+
+			Mustache.parse(articleTemplate)
+
+			var articlesRendered = ''
 			$.each(datas, function(i, article) {
 				var linksRendered = ''
 				$.each(article.categories, function(i, category) {
@@ -57,8 +63,10 @@ var TemplateEngine = (function() {
 				})
 				article.categoriesLinks = linksRendered
 
-				rendered += Mustache.render(template, article)
+				articlesRendered += Mustache.render(articleTemplate, article)
 			})
+
+			var rendered = Mustache.render(articleListTemplate, {"articles": articlesRendered})
 
 			render(contentElement, rendered)
 		}
@@ -71,7 +79,7 @@ var TemplateEngine = (function() {
 			Mustache.parse(template)
 			var rendered = Mustache.render(template,
 				{
-					"main-header": getMainHeaderTemplate(datas),
+					"main-header": getMainHeaderTemplate(datas.header),
 					"main-footer": getMainFooterTemplate()
 				})
 
@@ -79,11 +87,16 @@ var TemplateEngine = (function() {
 		}
 
 		function getMainHeaderTemplate(datas) {
-			var headerTemplate = '<header id="main-header">{{{nav}}}</header>'
+			var headerTemplate 	= '<header id="main-header">'
+													+ '	<div class="container">'
+													+ '		<div class="main-header-nav">{{{nav}}}</div>'
+													+ '		<div class="main-header-highlight>{{{article}}}</div>'
+													+ '</header>'
 
-			var r = getNavTemplate(datas)
+			var navRendered = getNavTemplate(datas.categories)
+			var articleRendered = getHeaderArticleTemplate(datas.article)
 
-			var rendered = Mustache.render(headerTemplate, {"nav": r})
+			var rendered = Mustache.render(headerTemplate, {"nav": navRendered, "article": articleRendered})
 			return rendered
 		}
 
@@ -126,6 +139,18 @@ var TemplateEngine = (function() {
 			return rendered
 		}
 
+		function getHeaderArticleTemplate(article) {
+			var template 	= '<div class="article">'
+										+ ' {{#image}}<img src="{{image}}" />{{/image}}'
+										+ '	<h1 class="article-title">{{title}}</h1>'
+										+ '	<h2 class="article-author">{{author}}</h2>'
+										+ '</div>'
+
+			Mustache.parse(template)
+
+			return Mustache.render(template, article)
+		}
+
 		function getMainFooterTemplate() {
 			return '<footer id="main-footer"></footer>'
 		}
@@ -144,11 +169,6 @@ var TemplateEngine = (function() {
 										.then(function() {
 											renderArticlesTemplate(datas)
 										})
-					case 'html':
-						return hideContent(appElement)
-										.then(function() {
-											renderHtmlTemplate(datas)
-										})
 					default:
 						console.error('Template not found')
 						return false
@@ -159,6 +179,13 @@ var TemplateEngine = (function() {
 				return hideContent(contentElement)
 								.then(function() {
 									render(contentElement, 'loading', 'fast')
+								})
+			},
+
+			renderHtml: function(datas) {
+				return hideContent(appElement)
+								.then(function() {
+									renderHtmlTemplate(datas)
 								})
 			}
 		}

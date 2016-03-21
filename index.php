@@ -16,6 +16,6 @@
 		<script src="/assets/js/app.js"></script>
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app" class="container"></div>
 	</body>
 </html>
