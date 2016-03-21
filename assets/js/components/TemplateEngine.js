@@ -3,7 +3,16 @@ var TemplateEngine = (function() {
 
 	function init(el) {
 		// Private
-		var element = el
+		var appElement = el
+		var contentElement = '#content'
+
+		function render(element, content, duration = "slow") {
+			return $(element)
+				.hide()
+				.html(content)
+				.fadeIn(duration)
+				.promise()
+		}
 
 		function renderArticleTemplate(datas) {
 			var template 	= '<div>'
@@ -22,7 +31,7 @@ var TemplateEngine = (function() {
 
 			var rendered = Mustache.render(template, datas)
 
-			document.getElementById('content').innerHTML = rendered
+			render(contentElement, rendered)
 		}
 
 		function renderArticlesTemplate(datas) {
@@ -45,7 +54,7 @@ var TemplateEngine = (function() {
 				rendered += Mustache.render(template, article)
 			})
 
-			document.getElementById('content').innerHTML = rendered
+			render(contentElement, rendered)
 		}
 
 		function renderHtmlTemplate(datas) {
@@ -60,7 +69,7 @@ var TemplateEngine = (function() {
 					"main-footer": getMainFooterTemplate()
 				})
 
-			document.getElementById(el).innerHTML = rendered
+			render(appElement, rendered, 'fast')
 		}
 
 		function getMainHeaderTemplate(datas) {
@@ -124,6 +133,7 @@ var TemplateEngine = (function() {
 		// Public
 		return {
 			renderTemplate: function(template, datas) {
+				var r = true
 				switch (template) {
 					case 'article':
 						renderArticleTemplate(datas)
@@ -132,16 +142,17 @@ var TemplateEngine = (function() {
 						renderArticlesTemplate(datas)
 						break
 					case 'html':
-						renderHtmlTemplate(datas)
+						r = renderHtmlTemplate(datas)
 						break
 					default:
 						console.error('Template not found')
 						break
 				}
+				return r
 			},
 
 			displayPreloader: function() {
-
+				render(contentElement, 'loading', 'fast')
 			}
 		}
 	}

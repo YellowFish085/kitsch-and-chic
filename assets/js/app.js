@@ -9,7 +9,7 @@ $(document).ready(function() {
 		})
 	).done(function(){
 		//initApp()
-		new App({'element': 'app'})
+		new App({'element': '#app'})
 	})
 	.fail(function(e) {
 		console.error(e.responseText)

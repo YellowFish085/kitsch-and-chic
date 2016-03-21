@@ -13,6 +13,8 @@ var App = function(datas) {
 	}
 
 	var processView = function() {
+		TemplateEngine.getInstance().displayPreloader()
+
 		var params = getUrlParameters()
 
 		if (params.length == 1) {
@@ -66,7 +68,7 @@ var App = function(datas) {
 	}
 
 	var displayHtml = function() {
-		TemplateEngine.getInstance().renderTemplate('html', Category.getInstance().all())	
+		return TemplateEngine.getInstance().renderTemplate('html', Category.getInstance().all())	
 	}
 
 	var setPageMeta = function(type, item) {
@@ -109,8 +111,10 @@ var App = function(datas) {
 				$(deferred.resolve)
 			})
 		).done(function(){
-			displayHtml()
-			processView()
+			$.when(displayHtml())
+				.then(function() {
+						processView()
+					})
 		})
 		.fail(function(e) {
 			console.error("Error while loading datas.")
