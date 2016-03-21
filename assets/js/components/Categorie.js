@@ -9,7 +9,7 @@ var Category = (function() {
 			var r = null
 			$.each(cat, function(i, category) {
 		    if (category.slug == slug) {
-		        r = category
+		        r = $.extend(true, {}, category)
 		        return false
 		    }
 				if (category.subcategories != null) {
@@ -42,7 +42,8 @@ var Category = (function() {
 			},
 
 			all: function () {
-				return categories.categories
+				var r = $.extend(true, {}, categories.categories)
+				return r
 			},
 
 			find: function (slug) {

@@ -8,11 +8,10 @@ var Article = (function() {
 		function setArticlesCategories(datas) {
 			var r = []
 			$.each(datas, function(i, article) {
-				var rArticle = article
 				if (article.categories) {
-					var rArticle = setArticleCategories(rArticle)
+					var article = setArticleCategories(article)
 				}
-				r.push(rArticle)
+				r.push(article)
 			})
 			return r
 		}
@@ -46,14 +45,15 @@ var Article = (function() {
 			},
 
 			all: function () {
-				return setArticlesCategories(articles.articles)
+				var r = $.extend(true, {}, articles.articles)
+				return setArticlesCategories(r)
 			},
 
 			find: function (id) {
 				var r = null
 				$.each(articles.articles, function(i, article) {
 			    if (article.id == id) {
-			        r = article
+			        r = $.extend(true, {}, article)
 			        return false
 			    }
 				})
@@ -65,7 +65,7 @@ var Article = (function() {
 				var r = []
 				$.each(articles.articles, function(i, article) {
 					if ($.inArray(category, article.categories) != -1) {
-						r.push(article)
+						r.push($.extend(true, {}, article))
 					}
 				})
 				r = setArticlesCategories(r)
