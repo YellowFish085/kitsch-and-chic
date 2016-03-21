@@ -6,12 +6,18 @@ var TemplateEngine = (function() {
 		var appElement = el
 		var contentElement = '#content'
 
+		function hideContent(element, duration = "fast") {
+			return $(element).fadeOut(duration).promise()
+		}
+
 		function render(element, content, duration = "slow") {
-			return $(element)
-				.hide()
-				.html(content)
-				.fadeIn(duration)
-				.promise()
+			return $(element).html(content).fadeIn(duration).promise()
+		}
+
+		function getLinktemplate(datas) {
+			var template = '<a href="{{{url}}}" title="{{{title}}}">{{{title}}}</a>'
+			Mustache.parse(template)
+			return Mustache.render(template, datas)
 		}
 
 		function renderArticleTemplate(datas) {
@@ -120,12 +126,6 @@ var TemplateEngine = (function() {
 			return rendered
 		}
 
-		function getLinktemplate(datas) {
-			var template = '<a href="{{{url}}}" title="{{{title}}}">{{{title}}}</a>'
-			Mustache.parse(template)
-			return Mustache.render(template, datas)
-		}
-
 		function getMainFooterTemplate() {
 			return '<footer id="main-footer"></footer>'
 		}
@@ -133,26 +133,33 @@ var TemplateEngine = (function() {
 		// Public
 		return {
 			renderTemplate: function(template, datas) {
-				var r = true
 				switch (template) {
 					case 'article':
-						renderArticleTemplate(datas)
-						break
+						return hideContent(contentElement)
+										.then(function() {
+											renderArticleTemplate(datas)
+										})
 					case 'articles':
-						renderArticlesTemplate(datas)
-						break
+						return hideContent(contentElement)
+										.then(function() {
+											renderArticlesTemplate(datas)
+										})
 					case 'html':
-						r = renderHtmlTemplate(datas)
-						break
+						return hideContent(appElement)
+										.then(function() {
+											renderHtmlTemplate(datas)
+										})
 					default:
 						console.error('Template not found')
-						break
+						return false
 				}
-				return r
 			},
 
 			displayPreloader: function() {
-				render(contentElement, 'loading', 'fast')
+				return hideContent(contentElement)
+								.then(function() {
+									render(contentElement, 'loading', 'fast')
+								})
 			}
 		}
 	}

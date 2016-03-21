@@ -14,33 +14,34 @@ var App = function(datas) {
 
 	var processView = function() {
 		TemplateEngine.getInstance().displayPreloader()
+			.then(function() {
+				var params = getUrlParameters()
 
-		var params = getUrlParameters()
-
-		if (params.length == 1) {
-			if (params[0] == 'about') {
-				console.Log('|| Display about')
-				setPageMeta('category', params[0])
-			}
-			else {
-				console.log('|| Display articles from ' + params[0] + ' category')
-				displayArticles(params[0])
-			}
-		}
-		else if (params.length == 2) {
-			if (params[0] == 'article') {
-				console.log('|| Display article ' + params[1])
-				displayArticle(params[1])
-			}
-			else {
-				console.log('|| Display articles from ' + params[0] + '/' + params[1] + ' subcategory')
-				displayArticles(params[1])
-			}
-		}
-		else {
-			console.log('|| Display all articles')
-			displayAllArticles()
-		}
+				if (params.length == 1) {
+					if (params[0] == 'about') {
+						console.Log('|| Display about')
+						setPageMeta('category', params[0])
+					}
+					else {
+						console.log('|| Display articles from ' + params[0] + ' category')
+						displayArticles(params[0])
+					}
+				}
+				else if (params.length == 2) {
+					if (params[0] == 'article') {
+						console.log('|| Display article ' + params[1])
+						displayArticle(params[1])
+					}
+					else {
+						console.log('|| Display articles from ' + params[0] + '/' + params[1] + ' subcategory')
+						displayArticles(params[1])
+					}
+				}
+				else {
+					console.log('|| Display all articles')
+					displayAllArticles()
+				}
+			})
 	}
 
 	var displayAllArticles = function() {
