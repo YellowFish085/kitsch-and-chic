@@ -9,10 +9,16 @@ var TemplateEngine = (function() {
 			var template 	= '<div>'
 										+ '	<h1>{{name}}</h1>'
 										+ '	<h2>{{author}}</h2>'
+										+ '	<h3>{{{categoriesLinks}}}</h3>'
 										+ '	<p>{{content}}</p>'
 										+ '</div>'
 
 			Mustache.parse(template)
+			var linksRendered = ''
+			$.each(datas.categories, function(i, category) {
+				linksRendered += getLinktemplate(category)
+			})
+			datas.categoriesLinks = linksRendered
 
 			var rendered = Mustache.render(template, datas)
 
@@ -22,6 +28,7 @@ var TemplateEngine = (function() {
 		function renderArticlesTemplate(datas) {
 			var template 	= '<div>'
 										+ '	<h2><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
+										+ '	<h3>{{{categoriesLinks}}}</h3>'
 										+	'	<h3>{{author}}</h3>'
 										+ '</div>'
 
@@ -29,6 +36,12 @@ var TemplateEngine = (function() {
 
 			var rendered = ''
 			$.each(datas, function(i, article) {
+				var linksRendered = ''
+				$.each(article.categories, function(i, category) {
+					linksRendered += getLinktemplate(category)
+				})
+				article.categoriesLinks = linksRendered
+
 				rendered += Mustache.render(template, article)
 			})
 
@@ -67,13 +80,13 @@ var TemplateEngine = (function() {
 											+ '	</ul>'
 											+ '</nav>'
 
-			var rendered = getNavLinks(categories)
+			var rendered = getNavItemTemplate(categories)
 
 			Mustache.parse(navTemplate)
 			return Mustache.render(navTemplate, {"nav-ul-content": rendered})
 		}
 
-		function getNavLinks(categories) {
+		function getNavItemTemplate(categories) {
 			var navItemDropdownTemplate = '<li>'
 																	+ '	<span type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
 						    									+ '		{{title}}'
@@ -82,20 +95,26 @@ var TemplateEngine = (function() {
 						  										+ '</li>'
 			Mustache.parse(navItemDropdownTemplate)
 
-			var navItemTemplate = '<li><a href="{{{url}}}" title="{{{title}}}">{{{title}}}</a></li>'
+			var navItemTemplate = '<li>{{{link}}}</li>'
 			Mustache.parse(navItemTemplate)
 
 			var rendered = ''
 			$.each(categories, function(i, category) {
 				if (category.subcategories != null) {
-					rendered += Mustache.render(navItemDropdownTemplate, {"title": category.title, "dropdown-content": getNavLinks(category.subcategories)})
+					rendered += Mustache.render(navItemDropdownTemplate, {"title": category.title, "dropdown-content": getNavItemTemplate(category.subcategories)})
 				}
 				else {
-					rendered += Mustache.render(navItemTemplate, category)
+					rendered += Mustache.render(navItemTemplate, {"link": getLinktemplate(category)})
 				}
 			})
 
 			return rendered
+		}
+
+		function getLinktemplate(datas) {
+			var template = '<a href="{{{url}}}" title="{{{title}}}">{{{title}}}</a>'
+			Mustache.parse(template)
+			return Mustache.render(template, datas)
 		}
 
 		function getMainFooterTemplate() {
