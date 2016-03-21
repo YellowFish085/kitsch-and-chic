@@ -23,52 +23,58 @@ var App = function(datas) {
 			else {
 				console.log('|| Display articles from ' + params[0] + ' category')
 				displayArticles(params[0])
-				setPageMeta('category', params[0])
 			}
 		}
 		else if (params.length == 2) {
 			if (params[0] == 'article') {
 				console.log('|| Display article ' + params[1])
 				displayArticle(params[1])
-				setPageMeta('article', params[1])
 			}
 			else {
 				console.log('|| Display articles from ' + params[0] + '/' + params[1] + ' subcategory')
 				displayArticles(params[1])
-				setPageMeta('category', params[1])
 			}
 		}
 		else {
 			console.log('|| Display all articles')
 			displayAllArticles()
-			setPageMeta('category', 'accueil')
 		}
 	}
 
 	var displayAllArticles = function() {
-		TemplateEngine.getInstance().renderTemplate('articles', Article.getInstance().all())
+		var articles = Article.getInstance().all()
+		if (articles) {
+			TemplateEngine.getInstance().renderTemplate('articles', articles)
+			setPageMeta('category', null)
+		}
 	}
 
 	var displayArticles = function(category) {
-		TemplateEngine.getInstance().renderTemplate('articles', Article.getInstance().findByCategory(category))
+		var articles = Article.getInstance().findByCategory(category)
+		if (articles) {
+			TemplateEngine.getInstance().renderTemplate('articles', articles)
+			setPageMeta('category', Category.getInstance().find(category))
+		}
 	}
 
 	var displayArticle = function(id) {
-		TemplateEngine.getInstance().renderTemplate('article', Article.getInstance().find(id))
+		var article = Article.getInstance().find(id)
+		if (article) {
+			TemplateEngine.getInstance().renderTemplate('article', article)
+			setPageMeta('category', article)
+		}
 	}
 
 	var displayHtml = function() {
 		TemplateEngine.getInstance().renderTemplate('html', Category.getInstance().all())	
 	}
 
-	var setPageMeta = function(type, datas) {
+	var setPageMeta = function(type, item) {
 		if (type == 'article') {
-			var article = Article.getInstance().find(datas)
-			document.title = (article) ? toCamelCase(article.title) : ''
+			document.title = 'Kitsch & Chic | ' + item.title
 		}
 		else if (type == 'category') {
-			var category = Category.getInstance().find(datas)
-			document.title = (category) ? toCamelCase(category.title) : 'Accueil'
+			document.title = (item) ? 'Kitsch & Chic | ' + item.title : 'Kitsch & Chic'
 		}
 	}
 
@@ -97,8 +103,8 @@ var App = function(datas) {
 		TemplateEngine.initInstance(datas.element)
 
 		$.when(
-			Article.initDatas(),
 			Category.initDatas(),
+			Article.initDatas(),
 			$.Deferred(function(deferred){
 				$(deferred.resolve)
 			})
