@@ -107,6 +107,8 @@ table {
 
 .main-header-highlight-article {
 	position: relative;
+	
+	background : green;
 }
 
 .main-header-highlight-article img {
@@ -142,7 +144,148 @@ table {
 	font-weight: 300;
 }
 
+/* Content */
+#content {
+	position: relative;
+	left : 15px;
+	margin-bottom : 50px;
+}
+
+/* Article List */
+	/* .article-list */
+.article-list{
+	width : 90%;
+	margin : auto;
+}
+
+.article-list, .article-list a {
+	font-family: 'Raleway';
+	color: #FFFFFF;
+}
+
+	/* - .article-list-item  */
+.article-list-item {
+	overflow: hidden;
+	height : 200px;
+	padding : 0px;
+	margin-top : 10px;
+	padding : 0px 10px 0px 10px;
+}
+
+	/* -- .article-list-item-images-container */
+.article-list-item-images-container{
+	overflow: hidden;
+	height:190px;
+	text-align : center;
+	background : green;
+}
+
+.article-list-item-images-container img{
+	position : relative;
+	max-height : 100%;
+	width : auto;
+	left : 100%;
+	margin-left : -200%;
+}
+
+	/* -- .article-list-item-text */
+.article-list-item-text {
+	position : absolute;
+	bottom : 20px;
+}
+
+.article-list-item-text-title, .article-list-item-text-author{
+	display : block;
+	padding : 5px;
+	width : auto;
+}
+
+.article-list-item-text-title{
+	background: #fd6b6c;
+	background-size: auto 90%;
+	font-size: 34px;
+	font-weight: bold;
+}
+
+.article-list-item-text-author {
+	background : #6ac2bd;
+	display : inline-block;
+}
+
+	/* -- .article-list-item-categories */
+.arcitle-list-item-categories {
+	padding : 0px;
+}
+
+.arcitle-list-item-categories a{
+	background : #6ac2bd;
+	display : inline-block;
+	font-size : 10px;
+	padding : 2px;
+	margin-right : 2px;
+}
+/*--------------------------------*/
+
+/* Home */
+#welcomeMessage{
+	text-align : center;
+	font-family: 'Raleway';
+	color: #FFFFFF;
+}
+
+#welcomeMessage h2{
+	display : inline-block;
+	width : 35%;
+	padding : 5px 25px 5px 25px;
+	background : #fd6b6c;
+	font-size : 34px;	
+	font-weight: bold;
+}
+
+.home-list-categories{
+	overflow:hidden;
+}
+
+.home-section{
+	position : relative;
+}
+
+
+.home-section-title {
+	position : relative;
+	height : 45px;
+	margin : 40px 0px 5px 0px;
+}
+
+.home-section-title-text{
+	font-family: 'Raleway';
+	position : absolute;
+	top : 0px;
+	color: #FFFFFF;
+	display: inline-block;
+	font-size: 34px;
+	font-weight: bold;
+	min-width : 45%
+}
+
+.home-section:nth-child(2n+1) .home-section-title-text{
+	left : 0px;
+	padding: 5px 50px 5px 80px;
+	background: #6ac2bd url("/assets/images/flamingo.png") no-repeat scroll 10% center;
+	background-size: auto 90%;
+}
+
+.home-section:nth-child(2n) .home-section-title-text{
+	right : 0px;
+	text-align : right;
+	padding: 5px 80px 5px 50px;
+	background: #6ac2bd url("/assets/images/flamingo.png") no-repeat scroll 90% center;
+	background-size: auto 90%;
+	margin-left : 0px;
+}
+/*--------------------------------*/
 @media (min-width: 768px) and (max-width: 991px) {
+
 	#main-header {
 		height: 200px;
 	}
@@ -183,6 +326,8 @@ table {
 
 	.main-header-nav {
 		height: 50px;
+
+
 	}
 
 	.main-header-nav li {

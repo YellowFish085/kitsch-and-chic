@@ -42,35 +42,41 @@ var TemplateEngine = (function() {
 		}
 
 		function renderArticlesTemplate(datas) {
-			var articleListTemplate = '<div class="row article-list">{{{articles}}}</div>'
-
-			Mustache.parse(articleListTemplate)
-
-			var articleTemplate = '<div class="article-list-item col-xs-12 col-sm-3">'
-													+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" />{{/image}}'
-													+ '	<h2 class="article-list-item-title"><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
-													+ '	<span class="arcitle-list-item-categories">{{{categoriesLinks}}}</span>'
-													+	'	<h3 class="article-list-item-author">{{author}}</h3>'
-													+ '</div>'
-
-			Mustache.parse(articleTemplate)
-
-			var articlesRendered = ''
-			$.each(datas, function(i, article) {
-				var linksRendered = ''
-				$.each(article.categories, function(i, category) {
-					linksRendered += getLinktemplate(category)
-				})
-				article.categoriesLinks = linksRendered
-
-				articlesRendered += Mustache.render(articleTemplate, article)
-			})
-
-			var rendered = Mustache.render(articleListTemplate, {"articles": articlesRendered})
-
+			var rendered = getListArticlesTemplate(datas)
 			render(contentElement, rendered)
 		}
 
+		/*--------renderHomeTemplate------------*/
+		function renderHomeTemplate(datas) {
+			var homeListTemplate = '<div id="welcomeMessage"><h2>Bienvenu <3</h2></div>'
+									+ '<div class="home-list-categories">'
+									+ '	{{{categories}}}'
+									+ '</div>'
+			
+			Mustache.parse(homeListTemplate)
+			
+			var categoryTemplate = '<div class="row home-section">'
+									+ '	<div class="home-section-title"><span class="home-section-title-text">{{category}}</span></div>'
+									+ '	{{{articles}}}'
+									+ '</div>'
+									
+			Mustache.parse(categoryTemplate)
+							
+			var categoryRender = ''
+			
+			$.each(datas, function(i, section){
+				console.log(section.category)
+				section.category = section.category.title
+				section.articles = getListArticlesTemplate(section.articles)
+				categoryRender += Mustache.render(categoryTemplate, section)
+			})
+
+			var rendered = Mustache.render(homeListTemplate, {"categories": categoryRender})
+			
+			render(contentElement, rendered)
+		}
+		/*--------------------------------------*/
+		
 		function renderHtmlTemplate(datas) {
 			var template 	= '{{{main-header}}}'
 										+ '<div id="content"></div>'
@@ -170,6 +176,60 @@ var TemplateEngine = (function() {
 			return '<footer id="main-footer"></footer>'
 		}
 
+		/*--------getListArticlesTemplate------------*/
+		function getListArticlesTemplate(datas) {
+			var articleListTemplate = '<div class="row article-list">{{{articles}}}</div>'
+
+			Mustache.parse(articleListTemplate)
+
+			var articleTemplate = '<div class="article-list-item col-xs-12 col-sm-{{sizeCols}}">'
+													+ '	<span class="arcitle-list-item-categories">{{{categoriesLinks}}}</span>'
+													+ ' <div class = "article-list-item-images-container">'
+													+ ' 	{{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" />{{/image}}'
+													+ ' </div>'
+													+ ' <div class = "article-list-item-text">'
+													+ '		<h2 class="article-list-item-text-title"><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
+													+ '		<h3 class="article-list-item-text-author">{{author}}</h3>'
+													+ ' </div>'
+													+ '</div>'
+
+			Mustache.parse(articleTemplate)
+
+			var articlesRendered = ''
+			
+			var sizeCols
+			var sizeDefened =false
+			if(datas.length <= 2){
+				sizeCols = 6
+				sizeDefened = true
+			}
+			else if (datas.length <= 3){
+				sizeCols = 4
+				sizeDefened = true
+			}
+			
+			$.each(datas, function(i, article) {
+				var linksRendered = ''
+				$.each(article.categories, function(i, category) {
+					linksRendered += getLinktemplate(category)
+				})
+				article.categoriesLinks = linksRendered
+				
+				if(!sizeDefened){
+					if(i%5 < 2) sizeCols = 6;
+					else sizeCols = 4;
+				}
+				article.sizeCols = sizeCols;
+				
+				articlesRendered += Mustache.render(articleTemplate, article)
+			})
+
+			var rendered = Mustache.render(articleListTemplate, {"articles": articlesRendered})
+			
+			return rendered;
+		}
+		/*-------------------------------------------*/
+		
 		// Public
 		return {
 			renderTemplate: function(template, datas) {
@@ -183,6 +243,11 @@ var TemplateEngine = (function() {
 						return hideContent(contentElement)
 										.then(function() {
 											renderArticlesTemplate(datas)
+										})
+					case 'home':
+						return hideContent(contentElement)
+										.then(function() {
+											renderHomeTemplate(datas)
 										})
 					default:
 						console.error('Template not found')
