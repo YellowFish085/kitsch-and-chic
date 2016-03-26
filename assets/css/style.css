@@ -53,7 +53,6 @@ table {
 
 #main-header {
 	position: relative;
-	height: 400px;
 }
 
 .main-header-logo,
@@ -66,12 +65,7 @@ table {
 	height: auto;
 }
 
-.main-header-nav {
-	height: 50px;
-}
-
 .main-header-nav-bg {
-	height: 50px;
 	background-color: rgba(255, 255, 255, 0.9);
 	z-index: 1;
 }
@@ -80,7 +74,6 @@ table {
 	display: inline-block;
 	position: relative;
 	margin-right: 20px;
-	line-height: 50px;
 	font-family: 'Raleway';
 	font-weight: 500;
 	text-transform: uppercase;
@@ -113,7 +106,6 @@ table {
 }
 
 .main-header-highlight-article {
-	height: 400px;
 	position: relative;
 }
 
@@ -137,10 +129,8 @@ table {
 
 .main-header-highlight-article-text-title {
 	display: block;
-	padding: 5px 80px 5px 50px;
 	background: #fd6b6c url("/assets/images/flamingo.png") no-repeat scroll 85% center;
 	background-size: auto 90%;
-	font-size: 34px;
 	font-weight: bold;
 }
 
@@ -152,10 +142,64 @@ table {
 	font-weight: 300;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+	#main-header {
+		height: 200px;
+	}
+
+	.main-header-nav {
+		height: 30px;
+	}
+
+	.main-header-nav li {
+		line-height: 30px;
+	}
+
+	.main-header-nav-bg {
+		height: 30px;
+	}
+	
+	.main-header-highlight-article {
+		height: 200px;
+	}
+
+	.main-header-highlight-article-text-title {
+		padding: 5px 80px 5px 50px;
+		font-size: 26px;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 1999px) {
 	.main-header-nav li > a,
 	.main-header-nav li > span {
 		font-size: 11px;
+	}
+}
+
+@media (min-width: 992px) {
+	#main-header {
+		height: 400px;
+	}
+
+	.main-header-nav {
+		height: 50px;
+	}
+
+	.main-header-nav li {
+		line-height: 50px;
+	}
+
+	.main-header-nav-bg {
+		height: 50px;
+	}
+
+	.main-header-highlight-article {
+		height: 400px;
+	}
+
+	.main-header-highlight-article-text-title {
+		padding: 5px 80px 5px 50px;
+		font-size: 34px;
 	}
 }
 
