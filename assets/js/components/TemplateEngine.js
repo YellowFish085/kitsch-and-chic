@@ -22,7 +22,7 @@ var TemplateEngine = (function() {
 
 		function renderArticleTemplate(datas) {
 			var template 	= '<div class="article">'
-										+ ' {{#image}}<img src="{{image}}" />{{/image}}'
+										+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
 										+ '	<h1 class="article-title">{{title}}</h1>'
 										+ '	<h2 class="article-author">{{author}}</h2>'
 										+ '	<span class="article-categories">{{{categoriesLinks}}}</span>'
@@ -47,7 +47,7 @@ var TemplateEngine = (function() {
 			Mustache.parse(articleListTemplate)
 
 			var articleTemplate = '<div class="article-list-item col-xs-12 col-sm-3">'
-													+ ' {{#image}}<img src="{{image}}" />{{/image}}'
+													+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" />{{/image}}'
 													+ '	<h2 class="article-list-item-title"><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
 													+ '	<span class="arcitle-list-item-categories">{{{categoriesLinks}}}</span>'
 													+	'	<h3 class="article-list-item-author">{{author}}</h3>'
@@ -89,8 +89,19 @@ var TemplateEngine = (function() {
 		function getMainHeaderTemplate(datas) {
 			var headerTemplate 	= '<header id="main-header">'
 													+ '	<div class="container">'
-													+ '		<div class="main-header-nav">{{{nav}}}</div>'
-													+ '		<div class="main-header-highlight>{{{article}}}</div>'
+													+ '		<div class="row">'
+													+ '			<div class="main-header-logo col-sm-3 col-md-4 hidden-xs">'
+													+ ' 			<img src="/assets/images/kitsch_and_chic_logo.png" />'
+													+ '			</div>'
+													+ '			<div class="main-header-nav col-sm-9 col-md-8 hidden-xs">{{{nav}}}</div>'
+													+ '			<div class="main-header-nav-bg absolute-in-row"></div>'
+													+ '			<div class="main-header-highlight-container absolute-in-row">'
+													+ '				<div class="row">'
+													+ '					<div class="main-header-highlight col-sm-12 hidden-xs">{{{article}}}</div>'
+													+ ' 			</div>'
+													+ ' 		</div>'
+													+ ' 	</div>'
+													+ '	</div>'
 													+ '</header>'
 
 			var navRendered = getNavTemplate(datas.categories)
@@ -101,8 +112,8 @@ var TemplateEngine = (function() {
 		}
 
 		function getNavTemplate(categories) {
-			var navTemplate = '<nav class="row">'
-											+ '	<ul class="col-xs-12 col-sm-12 main-nav">'
+			var navTemplate = '<nav>'
+											+ '	<ul class="main-nav">'
 											+ '		<li><a href="/" title="Accueil">Accueil</a></li>'
 											+ '		{{{nav-ul-content}}}'
 											+ '	</ul>'
@@ -140,10 +151,14 @@ var TemplateEngine = (function() {
 		}
 
 		function getHeaderArticleTemplate(article) {
-			var template 	= '<div class="article">'
-										+ ' {{#image}}<img src="{{image}}" />{{/image}}'
-										+ '	<h1 class="article-title">{{title}}</h1>'
-										+ '	<h2 class="article-author">{{author}}</h2>'
+			var template 	= '<div class="main-header-highlight-article">'
+										+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
+										+ '	<div class="main-header-highlight-article-text">'
+										+ '		<a href="/article/{{id}}" title="{{title}}">'
+										+ '			<span class="main-header-highlight-article-text-title">{{title}}</span>'
+										+ '			<span class="main-header-highlight-article-text-author">{{author}}</span>'
+										+ '		</a>'
+										+ '	</div>'
 										+ '</div>'
 
 			Mustache.parse(template)

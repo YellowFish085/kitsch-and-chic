@@ -44,8 +44,124 @@ table {
 
 
 
-header nav ul:not(.dropdown-menu) > li {
+.absolute-in-row {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 15px;
+}
+
+#main-header {
+	position: relative;
+	height: 400px;
+}
+
+.main-header-logo,
+.main-header-nav {
+	z-index: 2;
+}
+
+.main-header-logo img {
+	max-width: 100%;
+	height: auto;
+}
+
+.main-header-nav {
+	height: 50px;
+}
+
+.main-header-nav-bg {
+	height: 50px;
+	background-color: rgba(255, 255, 255, 0.9);
+	z-index: 1;
+}
+
+.main-header-nav li {
 	display: inline-block;
 	position: relative;
 	margin-right: 20px;
+	line-height: 50px;
+	font-family: 'Raleway';
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #fd6b6c;
+}
+
+.main-header-nav li > span {
+	cursor: default;
+}
+
+.main-header-nav li > a {
+	font-family: 'Raleway';
+	text-transform: uppercase;
+	color: #fd6b6c;
+}
+
+.main-header-nav .dropdown-menu > li {
+	width: 100%;
+}
+
+.main-header-nav .dropdown-menu > li > a:focus,
+.main-header-nav .dropdown-menu > li > a:hover {
+	background-color: #FFFFFF;
+	color: #fd6b6c;
+	text-decoration: underline;
+}
+
+.main-header-highlight-container {
+	overflow: hidden;
+}
+
+.main-header-highlight-article {
+	height: 400px;
+	position: relative;
+}
+
+.main-header-highlight-article img {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+.main-header-highlight-article-text {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.main-header-highlight-article-text > a {
+	font-family: 'Raleway';
+	color: #FFFFFF;
+}
+
+.main-header-highlight-article-text-title {
+	display: block;
+	padding: 5px 80px 5px 50px;
+	background: #fd6b6c url("/assets/images/flamingo.png") no-repeat scroll 85% center;
+	background-size: auto 90%;
+	font-size: 34px;
+	font-weight: bold;
+}
+
+.main-header-highlight-article-text-author {
+	display: block;
+	padding: 5px;
+	margin-left: 50px;
+	background-color: #6ac2bd;
+	font-weight: 300;
+}
+
+@media (min-width: 768px) and (max-width: 1999px) {
+	.main-header-nav li > a,
+	.main-header-nav li > span {
+		font-size: 11px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.main-header-nav li > a,
+	.main-header-nav li > span {
+		font-size: 14px;
+	}
 }
