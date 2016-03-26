@@ -70,6 +70,11 @@ var Article = (function() {
 				})
 				r = setArticlesCategories(r)
 				return r
+			},
+
+			last: function() {
+				var r = $.extend(true, {}, articles.articles[articles.articles.length - 1])
+				return setArticleCategories(r)
 			}
 		}
 	}

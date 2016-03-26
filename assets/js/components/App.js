@@ -73,7 +73,7 @@ var App = function(datas) {
 			{
 				"header": {
 					"categories": Category.getInstance().all(),
-					"article": Article.getInstance().find(1)
+					"article": Article.getInstance().last()
 				}
 			})	
 	}
