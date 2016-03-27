@@ -39,11 +39,63 @@ var App = function(datas) {
 				}
 				else {
 					console.log('|| Display all articles')
-					displayAllArticles()
+					displayHome();
+					//displayAllArticles()
 				}
 			})
 	}
-
+	/*--------displayHome------------*/
+	var displayHome = function(){
+		var categories = Category.getInstance().all();
+		var articles = [];
+		/*
+		if(articles.length!==0){console.log("PAS VIDE")}
+		else{console.log("VIDE")}
+		*/
+		var nbArticle;
+		
+		$.each(categories,function(i, category){
+			//console.log("CATEGORY---> "+category.slug)
+			
+			switch (category.slug){
+				case "intetieurs":
+					nbArticle = 5
+					break
+				case "astuces":
+					nbArticle = 3
+					break
+				case "createurs":
+					nbArticle = 2
+					break
+				case "insolites":
+					nbArticle = 2
+					break
+				case "passion-kitsch":
+					nbArticle = 3
+					break
+				default:
+					nbArticle = null
+					break
+			}
+			
+					console.log("nbArticle = "+nbArticle)
+			articles.push({
+				category : category,
+				articles : Article.getInstance().findLastByCategory(category.slug,nbArticle)
+			});
+		})
+		
+		if(articles.length !== 0){
+			TemplateEngine.getInstance().renderTemplate('home', articles)
+			setPageMeta('category', null)
+		}
+		
+		/*
+		if(articles.length!==0){console.log("PAS VIDE")}
+		else{console.log("VIDE")}
+		*/
+	}
+	/*------------------------------*/
 	var displayAllArticles = function() {
 		var articles = Article.getInstance().all()
 		if (articles) {
@@ -51,6 +103,7 @@ var App = function(datas) {
 			setPageMeta('category', null)
 		}
 	}
+	
 
 	var displayArticles = function(category) {
 		var articles = Article.getInstance().findByCategory(category)

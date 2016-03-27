@@ -61,17 +61,35 @@ var Article = (function() {
 				return r
 			},
 
-			findByCategory: function(category) {
+			findByCategory: function(category, lim) {
 				var r = []
 				$.each(articles.articles, function(i, article) {
 					if ($.inArray(category, article.categories) != -1) {
 						r.push($.extend(true, {}, article))
 					}
+					if(lim != null && lim < r.length) return true; 
 				})
 				r = setArticlesCategories(r)
 				return r
 			},
-
+		
+			/*--------findLastByCategory------------*/
+			findLastByCategory: function(category, lim) {
+				var r = []
+				//console.log("category = "+category  +" -- lim = "+lim)
+				$.each(articles.articles.reverse(), function(i, article) {
+					if ($.inArray(category, article.categories) != -1) {
+						//console.log(article)
+						r.push($.extend(true, {}, article))
+					}
+					//console.log("lim = "+lim+" -- r.length = "+r.length)
+					if(lim != null && lim <= r.length) return false; 
+				})
+				r = setArticlesCategories(r)
+				return r
+			},
+			/*-----------------------------------*/
+			
 			last: function() {
 				var r = $.extend(true, {}, articles.articles[articles.articles.length - 1])
 				return setArticleCategories(r)
