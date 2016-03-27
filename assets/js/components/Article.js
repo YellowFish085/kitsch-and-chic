@@ -76,16 +76,18 @@ var Article = (function() {
 			/*--------findLastByCategory------------*/
 			findLastByCategory: function(category, lim) {
 				var r = []
-				//console.log("category = "+category  +" -- lim = "+lim)
 				$.each(articles.articles.reverse(), function(i, article) {
 					if ($.inArray(category, article.categories) != -1) {
-						//console.log(article)
 						r.push($.extend(true, {}, article))
 					}
-					//console.log("lim = "+lim+" -- r.length = "+r.length)
 					if(lim != null && lim <= r.length) return false; 
 				})
 				r = setArticlesCategories(r)
+				
+				articles.articles.reverse()
+				
+				if(r.length == 1) return r[0]
+				
 				return r
 			},
 			/*-----------------------------------*/
