@@ -366,8 +366,10 @@ table {
 }
 
 .network-icone{
+	display : inline-block;
 	height : 60px;
-	padding : 0px 10px 0px 10px;
+	width : 60px;
+	padding : 20px 10px 0px 10px;
 }
 
 .network-icone img{

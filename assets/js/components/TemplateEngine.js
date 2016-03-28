@@ -278,14 +278,14 @@ var TemplateEngine = (function() {
 		/*--------getSharingFooter------------*/
 		function getSharingFooter(suffixe){
 			var template = '<div class="row"><h2>Partager</h2>'
-									+ '	<div class="row network-icones">{{{icones}}}</div>'
+									+ '	<div class="network-icones">{{{icones}}}</div>'
 									+ '</div>'
 			
 			Mustache.parse(template)
 			
 			var socialNetWork =["facebook","twitter","google+","pinterest","tumblr"]
 			
-			var iconeTemplate = '<div class="network-icone col-xs-1 col-sm-1">'
+			var iconeTemplate = '<div class="network-icone">'
 										+ '	<a href="#" title="{{netWork}}"><img src="/assets/images/socialNetWork/{{picture}}.png" alt="{{netWork}}"/></a>'
 										+ '</div>'
 			
