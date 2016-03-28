@@ -124,6 +124,7 @@ table {
 	bottom: 0;
 }
 
+.main-header-highlight-article-text > span,
 .main-header-highlight-article-text > a {
 	font-family: 'Raleway';
 	color: #FFFFFF;

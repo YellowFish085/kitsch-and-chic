@@ -5,6 +5,7 @@ var TemplateEngine = (function() {
 		// Private
 		var appElement = el
 		var contentElement = '#content'
+		var headerArticleElement = "#header-article"
 
 		function hideContent(element, duration = "fast") {
 			return $(element).fadeOut(duration).promise()
@@ -205,10 +206,8 @@ var TemplateEngine = (function() {
 			var template 	= '<div class="main-header-highlight-article">'
 										+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
 										+ '	<div class="main-header-highlight-article-text">'
-										+ '		<a href="/article/{{id}}" title="{{title}}">'
-										+ '			<span class="main-header-highlight-article-text-title">{{title}}</span>'
-										+ '			<span class="main-header-highlight-article-text-author">{{author}}</span>'
-										+ '		</a>'
+										+ '		<a href="/article/{{id}}" title="{{title}}" class="main-header-highlight-article-text-title">{{title}}</span></a>'
+										+ '		<span class="main-header-highlight-article-text-author">{{author}}</span>'
 										+ '	</div>'
 										+ '</div>'
 
@@ -327,7 +326,7 @@ var TemplateEngine = (function() {
 			},
 
 			displayPreloader: function() {
-				return hideContent(contentElement)
+				return hideContent(contentElement + ', ' + headerArticleElement)
 								.then(function() {
 									render(contentElement, 'loading', 'fast')
 								})
