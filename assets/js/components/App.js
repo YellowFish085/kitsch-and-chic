@@ -138,7 +138,7 @@ var App = function(datas) {
 			document.title = (item) ? 'Kitsch & Chic | ' + item.title : 'Kitsch & Chic'
 		}
 	}
-
+	
 	// Private helpers
 	var getUrlParameters = function() {
 		var params = window.location.pathname.split("/");

@@ -299,7 +299,7 @@ table {
 	margin: 30px 0px 10px 0px;
 }
 
-.article-description, .article-content p{
+.article-description, .article-content p, .astuce-description, .astuce-content{
 	padding : 0px 20px 0px 20px;
 }
 
@@ -376,6 +376,78 @@ table {
 .network-icone img{
 	max-width : 100%;
 	height : auto;
+}
+
+
+/* Astuce */
+	/* -astuce-step */
+.astuce-step{
+	margin : 30px 0px 0px 0px;
+	height : 400px;
+	width : 100%;
+	background : blue;
+	overflow : hidden;
+	position : relative;
+	text-align : center;
+}
+
+.astuce-step img{
+	position : relative;
+	min-width : 100%;
+	height : auto;
+	left : 100%;
+	margin-left : -200%;
+}
+ 
+.astuce-step-content{	
+	position : absolute;
+	top : 0px;
+	z-index : 1;
+	background : rgba(253,107,108,0.8);
+	border : 3px solid #6ac2bd;
+	width : 50%;
+	height : 400px;
+}
+
+.astuce-step:nth-child(2n+1) .astuce-step-content{
+	right : 0px;
+}
+
+.astuce-step:nth-child(2n) .astuce-step-content{
+	left : 0px;
+}
+
+.astuce-step-container{
+	padding : 0px;
+}
+
+.astuce-step-content-number{
+	margin : 10px auto 0px auto;
+	width : 90px;
+	height : 90px;
+	border-radius : 50%;
+	background : #6ac2bd;
+}
+.astuce-step-content-number h2 {
+	font-family: 'Raleway';
+	color: #FFFFFF;
+	line-height : 90px;
+	font-size : 60px;
+	position : relative;
+	left : 100%;
+	margin-left : -200%;
+}
+
+.astuce-step-content-title{
+	font-family: 'Raleway';
+	color: #6ac2bd;
+	font-size : 30px;
+	margin : 15px 0px 15px 0px;
+	font-weight : bold;
+}
+
+.astuce-step-content-text{
+	color: #FFFFFF;
 }
 
 /*--------------------------------*/

@@ -32,8 +32,7 @@ var TemplateEngine = (function() {
 										+ '		<h2 class="article-subtitle">{{subtitle}}</h2>'
 										+ '	</div>'
 										+ '	<div class="article-body">'
-										+ '		<div class="article-description">{{{description}}}</div>'
-										+ '		<div class="article-content">{{{content}}}</div>'
+										+ '		{{{contentArticle}}}'
 										+ '	<div class="article-footer">{{{articleFooter}}}</div>'
 										+ '</div>'
 
@@ -44,6 +43,9 @@ var TemplateEngine = (function() {
 			})
 			datas.categoriesLinks = linksRendered
 			
+			if(fromCategory(datas.categories,'astuces')) datas.contentArticle = getAstuceArticle(datas)
+			else datas.contentArticle = getClassicArticle({"description" : datas.description, "content":datas.content})
+			
 			datas.articleFooter = getSharingFooter("_heart");
 
 			var rendered = Mustache.render(template, datas)
@@ -52,6 +54,19 @@ var TemplateEngine = (function() {
 			
 			replaceImgArticleByDiv(".article-content","class")
 			
+		}
+		
+		/* --------DESOLE JE SAIS PAS OU LES METTRE -----------*/
+		function fromCategory(categories, nameCategory){
+			var isFrom = false;
+			$.each(categories, function(i, category){
+				if(nameCategory == category.slug){
+					isFrom =true;
+					return false;
+				}
+			})
+			
+			return isFrom;
 		}
 		
 		function replaceImgArticleByDiv(selector, typeSelector){
@@ -80,7 +95,9 @@ var TemplateEngine = (function() {
 				})
 			}
 		}
-
+		/* --------------------------------- */
+		
+		
 		function renderArticlesTemplate(datas) {
 			
 			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
@@ -273,6 +290,49 @@ var TemplateEngine = (function() {
 			return rendered;
 		}
 		/*-------------------------------------------*/
+		
+		/*--------getClassicArticle------------*/
+		function getClassicArticle(datas){
+			var template = '<div class="article-description">{{{description}}}</div>'
+										+ '<div class="article-content">{{{content}}}</div>'
+			
+			Mustache.parse(template)
+			
+			return Mustache.render(template, datas)
+		}
+		/*-------------------------------------*/
+		
+		/*--------getAstuceArticle------------*/
+		function getAstuceArticle(datas){
+			var template = '<div class="astuce-description">{{{description}}}</div>'
+										+ '<div class="astuce-content">{{{steps}}}</div>'
+			
+			Mustache.parse(template)
+			
+			var stepTemplate = '<div class=" row astuce-step">'
+										+ '	<div class="astuce-step-container col-sm-12 col-xs-12">'
+										+ '		<img src={{{image}}} alt={{{title}}}/>'
+										+ '		<div class="astuce-step-content col-sm-6 col-xs-6">'
+										+ '			<div class="astuce-step-content-number">'
+										+ '				<h2>{{{number}}}</h2>'
+										+ '			</div>'
+										+ '			<h2 class="astuce-step-content-title">{{{title}}}</h2>'
+										+ '			<div class="astuce-step-content-text">{{{content}}}</div>'
+										+ '		</div>'
+										+ '	</div>'
+										+ '</div>'
+										
+			Mustache.parse(stepTemplate)
+			
+			var renderedStep =''
+			$.each(datas.content, function(i, step){
+				step.number = i+1
+				renderedStep += Mustache.render(stepTemplate, step)
+			})
+			
+			return Mustache.render(template, {"description" : datas.description, "steps" : renderedStep})
+		}
+		/*------------------------------------*/
 		
 		/*--------getSharingFooter------------*/
 		function getSharingFooter(suffixe){
