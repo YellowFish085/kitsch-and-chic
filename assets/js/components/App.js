@@ -48,15 +48,11 @@ var App = function(datas) {
 	var displayHome = function(){
 		var categories = Category.getInstance().all();
 		var articles = [];
-		/*
-		if(articles.length!==0){console.log("PAS VIDE")}
-		else{console.log("VIDE")}
-		*/
+		
 		var nbArticle;
 		
 		$.each(categories,function(i, category){
-			//console.log("CATEGORY---> "+category.slug)
-			
+
 			switch (category.slug){
 				case "intetieurs":
 					nbArticle = 5
@@ -78,7 +74,6 @@ var App = function(datas) {
 					break
 			}
 			
-					console.log("nbArticle = "+nbArticle)
 			articles.push({
 				category : category,
 				articles : Article.getInstance().findLastByCategory(category.slug,nbArticle)
@@ -86,14 +81,14 @@ var App = function(datas) {
 		})
 		
 		if(articles.length !== 0){
-			TemplateEngine.getInstance().renderTemplate('home', articles)
+			TemplateEngine.getInstance().renderTemplate('home',
+				{
+					"lastArticle" : Article.getInstance().last(),
+					"articles" : articles
+				}
+			)
 			setPageMeta('category', null)
 		}
-		
-		/*
-		if(articles.length!==0){console.log("PAS VIDE")}
-		else{console.log("VIDE")}
-		*/
 	}
 	/*------------------------------*/
 	var displayAllArticles = function() {
@@ -108,7 +103,12 @@ var App = function(datas) {
 	var displayArticles = function(category) {
 		var articles = Article.getInstance().findByCategory(category)
 		if (articles) {
-			TemplateEngine.getInstance().renderTemplate('articles', articles)
+			TemplateEngine.getInstance().renderTemplate('articles', 
+				{
+					"lastArticle" : Article.getInstance().findLastByCategory(category,1),
+					"articles" : articles
+				}
+			)
 			setPageMeta('category', Category.getInstance().find(category))
 		}
 	}
@@ -125,8 +125,7 @@ var App = function(datas) {
 		return TemplateEngine.getInstance().renderHtml(
 			{
 				"header": {
-					"categories": Category.getInstance().all(),
-					"article": Article.getInstance().last()
+					"categories": Category.getInstance().all()
 				}
 			})	
 	}

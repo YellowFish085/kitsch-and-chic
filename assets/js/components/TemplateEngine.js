@@ -5,6 +5,7 @@ var TemplateEngine = (function() {
 		// Private
 		var appElement = el
 		var contentElement = '#content'
+		var headerArticleElement = "#header-article"
 
 		function hideContent(element, duration = "fast") {
 			return $(element).fadeOut(duration).promise()
@@ -21,12 +22,19 @@ var TemplateEngine = (function() {
 		}
 
 		function renderArticleTemplate(datas) {
+
+			var articleHeaderRendered = getHeaderArticleTemplate(datas)
+			render('#header-article', articleHeaderRendered)
+
 			var template 	= '<div class="article">'
-										+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
-										+ '	<h1 class="article-title">{{title}}</h1>'
-										+ '	<h2 class="article-author">{{author}}</h2>'
-										+ '	<span class="article-categories">{{{categoriesLinks}}}</span>'
-										+ '	<div class="article-content">{{{content}}}</div>'
+										+ '	<div class="article-header">'
+										+ '		<span class="article-categories">{{{categoriesLinks}}}</span>'
+										+ '		<h2 class="article-subtitle">{{subtitle}}</h2>'
+										+ '	</div>'
+										+ '	<div class="article-body">'
+										+ '		<div class="article-description">{{{description}}}</div>'
+										+ '		<div class="article-content">{{{content}}}</div>'
+										+ '	<div class="article-footer">{{{articleFooter}}}</div>'
 										+ '</div>'
 
 			Mustache.parse(template)
@@ -35,19 +43,59 @@ var TemplateEngine = (function() {
 				linksRendered += getLinktemplate(category)
 			})
 			datas.categoriesLinks = linksRendered
+			
+			datas.articleFooter = getSharingFooter("_heart");
 
 			var rendered = Mustache.render(template, datas)
 
 			render(contentElement, rendered)
+			
+			replaceImgArticleByDiv(".article-content","class")
+			
+		}
+		
+		function replaceImgArticleByDiv(selector, typeSelector){
+			var imgSelector = $(selector).find("img");
+
+			if(imgSelector.length !==0){
+				$.each(imgSelector, function(i){
+					var img = imgSelector.eq(i).clone()
+					
+					var divImgContainer = $("<div></div>").addClass("article-image-conainer")
+					var divImgSizeContainer = $("<div></div>").addClass("article-image-conainer-size")
+										
+					if(img.attr(typeSelector).indexOf("half-size-picture") != -1){
+						divImgContainer.addClass('half-size-picture col-xs-6 col-sm-6')
+						img.removeClass('half-size-picture')
+					}
+					else if(img.attr(typeSelector).indexOf("complete-size-picture") != -1){
+						divImgContainer.addClass('complete-size-picture col-xs-6 col-sm-12')
+						img.removeClass('complete-size-picture')
+					}
+					
+					img.appendTo(divImgSizeContainer)
+					divImgSizeContainer.appendTo(divImgContainer)
+					
+					imgSelector.eq(i).replaceWith(divImgContainer)
+				})
+			}
 		}
 
 		function renderArticlesTemplate(datas) {
-			var rendered = getListArticlesTemplate(datas)
+			
+			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
+			render('#header-article', articleHeaderRendered)
+			
+			var rendered = getListArticlesTemplate(datas.articles)
 			render(contentElement, rendered)
 		}
 
 		/*--------renderHomeTemplate------------*/
 		function renderHomeTemplate(datas) {
+			
+			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
+			render('#header-article', articleHeaderRendered)
+			
 			var homeListTemplate = '<div id="welcomeMessage"><h2>Bienvenu <3</h2></div>'
 									+ '<div class="home-list-categories">'
 									+ '	{{{categories}}}'
@@ -64,8 +112,7 @@ var TemplateEngine = (function() {
 							
 			var categoryRender = ''
 			
-			$.each(datas, function(i, section){
-				console.log(section.category)
+			$.each(datas.articles, function(i, section){
 				section.category = section.category.title
 				section.articles = getListArticlesTemplate(section.articles)
 				categoryRender += Mustache.render(categoryTemplate, section)
@@ -103,7 +150,7 @@ var TemplateEngine = (function() {
 													+ '			<div class="main-header-nav-bg absolute-in-row"></div>'
 													+ '			<div class="main-header-highlight-container absolute-in-row">'
 													+ '				<div class="row">'
-													+ '					<div class="main-header-highlight col-sm-12 hidden-xs">{{{article}}}</div>'
+													+ '					<div class="main-header-highlight col-sm-12 hidden-xs" id="header-article"></div>'
 													+ ' 			</div>'
 													+ ' 		</div>'
 													+ ' 	</div>'
@@ -111,9 +158,8 @@ var TemplateEngine = (function() {
 													+ '</header>'
 
 			var navRendered = getNavTemplate(datas.categories)
-			var articleRendered = getHeaderArticleTemplate(datas.article)
 
-			var rendered = Mustache.render(headerTemplate, {"nav": navRendered, "article": articleRendered})
+			var rendered = Mustache.render(headerTemplate, {"nav": navRendered})
 			return rendered
 		}
 
@@ -160,10 +206,8 @@ var TemplateEngine = (function() {
 			var template 	= '<div class="main-header-highlight-article">'
 										+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
 										+ '	<div class="main-header-highlight-article-text">'
-										+ '		<a href="/article/{{id}}" title="{{title}}">'
-										+ '			<span class="main-header-highlight-article-text-title">{{title}}</span>'
-										+ '			<span class="main-header-highlight-article-text-author">{{author}}</span>'
-										+ '		</a>'
+										+ '		<a href="/article/{{id}}" title="{{title}}" class="main-header-highlight-article-text-title">{{title}}</span></a>'
+										+ '		<span class="main-header-highlight-article-text-author">{{author}}</span>'
 										+ '	</div>'
 										+ '</div>'
 
@@ -230,6 +274,32 @@ var TemplateEngine = (function() {
 		}
 		/*-------------------------------------------*/
 		
+		/*--------getSharingFooter------------*/
+		function getSharingFooter(suffixe){
+			var template = '<div class="row"><h2>Partager</h2>'
+									+ '	<div class="network-icones">{{{icones}}}</div>'
+									+ '</div>'
+			
+			Mustache.parse(template)
+			
+			var socialNetWork =["facebook","twitter","google+","pinterest","tumblr"]
+			
+			var iconeTemplate = '<div class="network-icone">'
+										+ '	<a href="#" title="{{netWork}}"><img src="/assets/images/socialNetWork/{{picture}}.png" alt="{{netWork}}"/></a>'
+										+ '</div>'
+			
+			Mustache.parse(iconeTemplate)
+			
+			var renderedList = ''
+			$.each(socialNetWork, function(i,netWork){
+				renderedList += Mustache.render(iconeTemplate, {'netWork' : netWork, 'picture': netWork + suffixe})
+			})
+			
+			return Mustache.render(template, {"icones": renderedList})
+			
+		}
+		/*---------------------------------*/
+		
 		// Public
 		return {
 			renderTemplate: function(template, datas) {
@@ -256,7 +326,7 @@ var TemplateEngine = (function() {
 			},
 
 			displayPreloader: function() {
-				return hideContent(contentElement)
+				return hideContent(contentElement + ', ' + headerArticleElement)
 								.then(function() {
 									render(contentElement, 'loading', 'fast')
 								})

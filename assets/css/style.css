@@ -124,6 +124,7 @@ table {
 	bottom: 0;
 }
 
+.main-header-highlight-article-text > span,
 .main-header-highlight-article-text > a {
 	font-family: 'Raleway';
 	color: #FFFFFF;
@@ -151,13 +152,14 @@ table {
 	margin-bottom : 50px;
 }
 
-/* Article List */
-	/* .article-list */
-.article-list{
+/* Global */
+.article-list, .article{
 	width : 90%;
 	margin : auto;
 }
 
+/* Article List */
+	/* .article-list */
 .article-list, .article-list a {
 	font-family: 'Raleway';
 	color: #FFFFFF;
@@ -212,12 +214,14 @@ table {
 	display : inline-block;
 }
 
-	/* -- .article-list-item-categories */
-.arcitle-list-item-categories {
+	/* categories */
+.arcitle-list-item-categories, .article-categories {
 	padding : 0px;
 }
 
-.arcitle-list-item-categories a{
+.arcitle-list-item-categories a, .article-categories a{
+	font-family: 'Raleway';
+	color: #FFFFFF;
 	background : #6ac2bd;
 	display : inline-block;
 	font-size : 10px;
@@ -283,6 +287,97 @@ table {
 	background-size: auto 90%;
 	margin-left : 0px;
 }
+/*--------------------------------*/
+
+
+/* Article */
+.article-subtitle{
+	font-family: 'Raleway';
+	color: #fd6b6c;
+	font-size : 30px;
+	font-weight : bold;
+	margin: 30px 0px 10px 0px;
+}
+
+.article-description, .article-content p{
+	padding : 0px 20px 0px 20px;
+}
+
+.article-description{
+	font-size : 20px;
+	font-weight : bold;
+}
+
+.article-content p{
+	display : block;
+	margin-top: 30px;
+}
+
+	/* -.article-image */
+.article-image-conainer{
+	display : block;
+	height : 400px;
+	padding : 0px 10px 0px 10px;
+	margin-top : 20px;
+}
+
+.article-image-conainer-size{
+	height : 100%;
+	width : 100%;
+	background :blue;
+	overflow : hidden;
+	text-align : center;
+}
+
+.complete-size-picture img, .half-size-picture img{
+	position : relative;
+}
+
+.complete-size-picture img.portrait, .complete-size-picture img.paysage, .half-size-picture img.portrait{
+	max-width : 100%;
+	height : auto;
+	top : 100%;
+	margin-top : -200%;
+}
+
+.half-size-picture img.paysage{
+	max-height : 100%;
+	width : auto;
+	left : 100%;
+	margin-left : -200%;
+}
+
+	/* - .article-footer */
+.article-footer{
+	text-align : center;
+	margin-top : 40px;
+}
+
+.article-footer h2{
+	font-family: 'Raleway';
+	color: #6ac2bd;
+	font-size : 26px;
+	font-weight : bold;
+}
+	
+.network-icones{
+	display : inline;
+	margin : auto;
+	width : auto;
+}
+
+.network-icone{
+	display : inline-block;
+	height : 60px;
+	width : 60px;
+	padding : 20px 10px 0px 10px;
+}
+
+.network-icone img{
+	max-width : 100%;
+	height : auto;
+}
+
 /*--------------------------------*/
 @media (min-width: 768px) and (max-width: 991px) {
 
