@@ -7,12 +7,16 @@ var TemplateEngine = (function() {
 		var contentElement = '#content'
 		var headerArticleElement = "#header-article"
 
-		function hideContent(element, duration = "fast") {
+		function showContent(element, duration = "slow") {
+			return $(element).fadeIn(duration).promise()
+		}
+
+		function hideContent(element, duration = "slow") {
 			return $(element).fadeOut(duration).promise()
 		}
 
 		function render(element, content, duration = "slow") {
-			return $(element).html(content).fadeIn(duration).promise()
+			return $(element).html(content).promise()
 		}
 
 		function getLinktemplate(datas) {
@@ -22,9 +26,7 @@ var TemplateEngine = (function() {
 		}
 
 		function renderArticleTemplate(datas) {
-
 			var articleHeaderRendered = getHeaderArticleTemplate(datas)
-			render('#header-article', articleHeaderRendered)
 
 			var template 	= '<div class="article">'
 										+ '	<div class="article-header">'
@@ -48,10 +50,20 @@ var TemplateEngine = (function() {
 
 			var rendered = Mustache.render(template, datas)
 
-			render(contentElement, rendered)
-			
-			replaceImgArticleByDiv(".article-content","class")
-			
+			hideContent(contentElement + ', ' + headerArticleElement)
+				.then(function() {
+					return render('#header-article', articleHeaderRendered)
+				})
+				.then(function() {
+					return render(contentElement, rendered)
+				})
+				.then(function() {
+					replaceImgArticleByDiv(".article-content","class")
+					return showContent(contentElement + ', ' + headerArticleElement)
+				})
+				.then(function() {
+					return hideContent('#loading', 'fast')
+				})
 		}
 		
 		function replaceImgArticleByDiv(selector, typeSelector){
@@ -61,8 +73,8 @@ var TemplateEngine = (function() {
 				$.each(imgSelector, function(i){
 					var img = imgSelector.eq(i).clone()
 					
-					var divImgContainer = $("<div></div>").addClass("article-image-conainer")
-					var divImgSizeContainer = $("<div></div>").addClass("article-image-conainer-size")
+					var divImgContainer = $("<div></div>").addClass("article-image-container")
+					var divImgSizeContainer = $("<div></div>").addClass("article-image-container-size")
 										
 					if(img.attr(typeSelector).indexOf("half-size-picture") != -1){
 						divImgContainer.addClass('half-size-picture col-xs-6 col-sm-6')
@@ -82,19 +94,28 @@ var TemplateEngine = (function() {
 		}
 
 		function renderArticlesTemplate(datas) {
-			
 			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
-			render('#header-article', articleHeaderRendered)
-			
 			var rendered = getListArticlesTemplate(datas.articles)
-			render(contentElement, rendered)
+
+			hideContent(contentElement + ', ' + headerArticleElement)
+				.then(function() {
+					return render('#header-article', articleHeaderRendered)
+				})
+				.then(function() {
+					return render(contentElement, rendered)
+				})
+				.then(function() {
+					return showContent(contentElement + ', ' + headerArticleElement)
+				})
+				.then(function() {
+					return hideContent('#loading', 'fast')
+				})
 		}
 
 		/*--------renderHomeTemplate------------*/
 		function renderHomeTemplate(datas) {
 			
 			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
-			render('#header-article', articleHeaderRendered)
 			
 			var homeListTemplate = '<div id="welcomeMessage"><h2>Bienvenu <3</h2></div>'
 									+ '<div class="home-list-categories">'
@@ -119,8 +140,20 @@ var TemplateEngine = (function() {
 			})
 
 			var rendered = Mustache.render(homeListTemplate, {"categories": categoryRender})
-			
-			render(contentElement, rendered)
+
+			hideContent(contentElement + ', ' + headerArticleElement)
+				.then(function() {
+					return render('#header-article', articleHeaderRendered)
+				})
+				.then(function() {
+					return render(contentElement, rendered)
+				})
+				.then(function() {
+					return showContent(contentElement + ', ' + headerArticleElement)
+				})
+				.then(function() {
+					return hideContent('#loading', 'fast')
+				})
 		}
 		/*--------------------------------------*/
 		
@@ -128,6 +161,7 @@ var TemplateEngine = (function() {
 			var template 	= '{{{main-header}}}'
 										+ '<div id="content"></div>'
 										+ '{{{main-footer}}}'
+										+ '<div id="loading">Loading</div>'
 
 			Mustache.parse(template)
 			var rendered = Mustache.render(template,
@@ -136,7 +170,16 @@ var TemplateEngine = (function() {
 					"main-footer": getMainFooterTemplate()
 				})
 
-			render(appElement, rendered, 'fast')
+			hideContent(contentElement + ', ' + headerArticleElement)
+				.then(function() {
+					return render(appElement, rendered, 'fast')
+				})
+				.then(function() {
+					return showContent(contentElement + ', ' + headerArticleElement)
+				})
+				.then(function() {
+					return hideContent('#loading', 'fast')
+				})
 		}
 
 		function getMainHeaderTemplate(datas) {
@@ -146,9 +189,9 @@ var TemplateEngine = (function() {
 													+ '			<div class="main-header-logo col-sm-3 col-md-4 hidden-xs">'
 													+ ' 			<img src="/assets/images/kitsch_and_chic_logo.png" />'
 													+ '			</div>'
-													+ '			<div class="main-header-nav col-sm-9 col-md-8 hidden-xs">{{{nav}}}</div>'
-													+ '			<div class="main-header-nav-bg absolute-in-row"></div>'
-													+ '			<div class="main-header-highlight-container absolute-in-row">'
+													+ '			<div class="main-header-nav col-sm-9 col-md-8 col-xs-12">{{{nav}}}</div>'
+													+ '			<div class="main-header-nav-bg absolute-in-row hidden-xs"></div>'
+													+ '			<div class="main-header-highlight-container absolute-in-row hidden-xs">'
 													+ '				<div class="row">'
 													+ '					<div class="main-header-highlight col-sm-12 hidden-xs" id="header-article"></div>'
 													+ ' 			</div>'
@@ -303,40 +346,29 @@ var TemplateEngine = (function() {
 		// Public
 		return {
 			renderTemplate: function(template, datas) {
-				switch (template) {
-					case 'article':
-						return hideContent(contentElement)
-										.then(function() {
-											renderArticleTemplate(datas)
-										})
-					case 'articles':
-						return hideContent(contentElement)
-										.then(function() {
-											renderArticlesTemplate(datas)
-										})
-					case 'home':
-						return hideContent(contentElement)
-										.then(function() {
-											renderHomeTemplate(datas)
-										})
-					default:
-						console.error('Template not found')
-						return false
-				}
+				this.displayPreloader()
+				.then(function() {
+					console.log('lol')
+					switch (template) {
+						case 'article':
+							return renderArticleTemplate(datas)
+						case 'articles':
+							return renderArticlesTemplate(datas)
+						case 'home':
+							return renderHomeTemplate(datas)
+						default:
+							console.error('Template not found')
+							return false
+					}
+				})
 			},
 
 			displayPreloader: function() {
-				return hideContent(contentElement + ', ' + headerArticleElement)
-								.then(function() {
-									render(contentElement, 'loading', 'fast')
-								})
+				return showContent('#loading', 'fast')
 			},
 
 			renderHtml: function(datas) {
-				return hideContent(appElement)
-								.then(function() {
-									renderHtmlTemplate(datas)
-								})
+				return hideContent(contentElement + ', ' + headerArticleElement).then(function() { renderHtmlTemplate(datas) })
 			}
 		}
 	}
