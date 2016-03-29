@@ -5,7 +5,7 @@
 			"title": "Article 1",
 			"author": "Author 1",
 			"subtitle": "Subtitle 1",
-			"categories": ["cuisine", "salle-de-bain","intetieurs"],
+			"categories": ["cuisine", "salle-de-bain","interieurs"],
 			"image": "/assets/images/design-retro-deco-couleurs-flashy.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -15,7 +15,7 @@
 			"title": "Article 2",
 			"author": "Author 2",
 			"subtitle": "Subtitle 2",
-			"categories": ["cuisine", "insolites","intetieurs"],
+			"categories": ["cuisine", "insolites","interieurs"],
 			"image": "/assets/images/un-bar-arlequin_5339411.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
 			"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!</p>"
@@ -35,7 +35,7 @@
 			"title": "Article 4",
 			"author": "Author 4",
 			"subtitle": "Subtitle 4",
-			"categories": ["salle-de-bain","intetieurs"],
+			"categories": ["salle-de-bain","interieurs"],
 			"image": "/assets/images/033.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -55,7 +55,7 @@
 			"title": "Article 6",
 			"author": "Author 6",
 			"subtitle": "Subtitle 6",
-			"categories": ["cuisine", "insolites","intetieurs"],
+			"categories": ["cuisine", "insolites","interieurs"],
 			"image": "/assets/images/Sans titre - 1.png",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/> <p>consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -65,7 +65,7 @@
 			"title": "Article 7",
 			"author": "Author 7",
 			"subtitle": "Subtitle 7",
-			"categories": ["cuisine", "insolites","intetieurs"],
+			"categories": ["cuisine", "insolites","interieurs"],
 			"image": "/assets/images/538.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><div class='row'><img src='/assets/images/1787.jpg' class='half-size-picture paysage'/><img src='/assets/images/1788.jpg' class='half-size-picture paysage'/><img src='/assets/images/1790.jpg' class='complete-size-picture paysage'/></div><p>consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p><div class='row'><img src='/assets/images/1791.jpg' class='complete-size-picture paysage'/><img src='/assets/images/1793.jpg' class='half-size-picture portrait'/><img src='/assets/images/1915.jpg' class='half-size-picture portrait'/></div><p>Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -95,7 +95,7 @@
 			"title": "Article 10",
 			"author": "Author 10",
 			"subtitle": "Subtitle 10",
-			"categories": ["passion-kitsch", "insolites","intetieurs"],
+			"categories": ["passion-kitsch", "insolites","interieurs"],
 			"image": "/assets/images/chaise-rouge.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -115,7 +115,7 @@
 			"title": "Article 12",
 			"author": "Author 12",
 			"subtitle": "Subtitle 12",
-			"categories": ["passion-kitsch", "insolites","intetieurs"],
+			"categories": ["passion-kitsch", "insolites","interieurs"],
 			"image": "/assets/images/Sans titre - 1.png",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"

@@ -44,6 +44,18 @@ table {
 
 
 
+#loading {
+	display: none;
+	width: 20%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: red;
+	opacity: 1;
+	z-index: 9999;
+}
+
 .absolute-in-row {
 	width: 100%;
 	position: absolute;
@@ -314,14 +326,14 @@ table {
 }
 
 	/* -.article-image */
-.article-image-conainer{
+.article-image-container{
 	display : block;
 	height : 400px;
 	padding : 0px 10px 0px 10px;
 	margin-top : 20px;
 }
 
-.article-image-conainer-size{
+.article-image-container-size{
 	height : 100%;
 	width : 100%;
 	background :blue;
@@ -379,6 +391,10 @@ table {
 }
 
 /*--------------------------------*/
+@media (max-width: 767px) {
+	
+}
+ 
 @media (min-width: 768px) and (max-width: 991px) {
 
 	#main-header {
