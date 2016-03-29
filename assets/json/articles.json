@@ -47,8 +47,23 @@
 			"subtitle": "Subtitle 5",
 			"categories": ["sejour", "astuces"],
 			"image": "/assets/images/cabinet-liqueur-tv-01.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
-			"content": "<p>Lorem ipsum dolor sit amet,</p> consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!</p>"
+			"description": "En voilà une bonne idée bien réalisée comme on aime : le Norvégien Kjell Are propose de transformer un poste de télévision vintage en bar à liqueurs ! Après avoir récupéré pour 30$ un modèle Tandberg TV3-47, notre bricoleur a vidé proprement le poste de tout son contenu électronique, ainsi qu’enlevé la vitre de l’écran. Il adapte ensuite des planches de bois pour faire des parois propres à l’intérieur et rajoute un éclairage sympa. Pour les plus curieux (mais surtout les plus bricoleurs) qui voudraient tenter la transformation, vous pouvez retrouver le descriptif de son processus complet de fabrication en suivant ce lien. Bon courage !",
+			"content": [
+					{
+						"image" : "/assets/images/cabinet-liqueur-tv-01.jpg",
+						"title" : "Trouver une télé"
+					},
+					{
+						"image" : "/assets/images/cabinet-liqueur-tv-05.jpg",
+						"title" : "Vider la",
+						"content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in rhoncus elit. Curabitur sodales, nisi ac suscipit accumsan, dui magna accumsan augue, sit amet dapibus magna tellus vel dolor. Integer ante magna, fringilla quis sodales eu, pulvinar vel nulla. Proin volutpat, elit vel consectetur ultrices, augue tellus aliquet massa, nec mollis lectus velit eget nisi. Aenean at tellus ac velit fermentum rhoncus. In auctor odio sed ligula vehicula pulvinar."
+					},
+					{
+						"image" : "/assets/images/cabinet-liqueur-tv-10.jpg",
+						"title" : "Résultat",
+						"content" : "Ah bah c'est bien, voilà."
+					}
+			]
 		},
 		{
 			"id": 6,
@@ -75,7 +90,7 @@
 			"title": "Article 8",
 			"author": "Author 8",
 			"subtitle": "Subtitle 8",
-			"categories": ["cuisine", "createurs","astuces"],
+			"categories": ["cuisine", "createurs"],
 			"image": "/assets/images/chaise-rouge.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet, </p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -85,7 +100,7 @@
 			"title": "Article 9",
 			"author": "Author 9",
 			"subtitle": "Subtitle 9",
-			"categories": ["astuces", "insolites"],
+			"categories": ["insolites"],
 			"image": "/assets/images/chaise-rouge.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/> <p>consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
@@ -105,7 +120,7 @@
 			"title": "Article 11",
 			"author": "Author 11",
 			"subtitle": "Subtitle 11",
-			"categories": ["passion-kitsch", "astuces"],
+			"categories": ["passion-kitsch"],
 			"image": "/assets/images/cabinet-liqueur-tv-01.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
 			"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!</p>"

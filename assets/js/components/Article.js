@@ -25,7 +25,7 @@ var Article = (function() {
 
 			return article
 		}
-
+		
 		return {
 			// Public
 			loadArticles: function() {
@@ -86,7 +86,7 @@ var Article = (function() {
 				
 				articles.articles.reverse()
 				
-				if(r.length == 1) return r[0]
+				if(lim == 1) return r[0]
 				
 				return r
 			},
