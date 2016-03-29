@@ -392,20 +392,20 @@ a.hvr,
 	font-weight : bold;
 }
 	
-.network-icones{
+.article-footer .network-icones{
 	display : inline;
 	margin : auto;
 	width : auto;
 }
 
-.network-icone{
+.article-footer .network-icone{
 	display : inline-block;
 	height : 60px;
 	width : 60px;
 	padding : 20px 10px 0px 10px;
 }
 
-.network-icone img{
+.article-footer .network-icone img{
 	max-width : 100%;
 	height : auto;
 }
@@ -480,6 +480,111 @@ a.hvr,
 
 .astuce-step-content-text{
 	color: #FFFFFF;
+}
+
+/* footer */
+#main-footer{
+	background : #6ac2bd;
+	height : 150px;	
+	position : relative;
+	color : #FFFFFF;
+}
+
+#main-footer .container, #main-footer .container .row{
+	height : 100%;
+}
+
+.main-footer-logo{
+	height : 100%;
+	padding : 0px;
+	position : absolute;
+	right : 0px;
+	bottom : 0px;
+}
+
+.main-footer-logo img{
+	position : absolute;
+	bottom : 0px;
+	right : 0px;
+	max-height : 100%;
+	width : auto;
+}
+
+.main-footer-sharing{
+	height : 100%;
+	text-align : center;
+	position : relative;
+	padding : 0px;
+}
+
+.main-footer-sharing h2{
+	display : block;
+	width : 100%;
+	z-index : 2;
+	position : absolute;
+	top : 0px;
+	
+	font-family: 'Raleway';
+	color: #FFFFFF;
+	font-size : 30px;
+	font-weight : bold;
+}
+
+.main-footer-sharing .network-icones{
+	height : 100%;
+}
+
+.main-footer-sharing .network-icone {
+	width : 40px;
+	display : inline-block;
+	height : 100%;
+}
+
+.main-footer-sharing .network-icone a{
+	display : block;
+	height : 100%;
+	position : relative;
+}
+
+.main-footer-sharing .network-icone img{
+	max-width : 100%;
+	height : auto;
+	position : absolute;
+	left : 0px;
+	top : 100%;
+	margin-top : -200%;
+}
+
+.main-footer-sharing .network-tumblr{
+	background : #36475c;
+}
+
+.main-footer-sharing .network-pinterest{
+	background : #be2227;
+}
+
+.main-footer-sharing .network-googleplus{
+	background : #dd4536;
+}
+
+.main-footer-sharing .network-twitter{
+	background : #39aae0;
+}
+
+.main-footer-sharing .network-facebook{
+	background : #3b5a9a;
+}
+
+.main-footer-text-container{
+	position : relative;
+	height : 100%;
+}
+
+.main-footer-text-legal-mention{
+	padding : 20px;
+	font-size : 12px;
+	position : absolute;
+	bottom : 0px;
 }
 
 /*--------------------------------*/

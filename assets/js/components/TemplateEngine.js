@@ -35,7 +35,10 @@ var TemplateEngine = (function() {
 										+ '	</div>'
 										+ '	<div class="article-body">'
 										+ '		{{{contentArticle}}}'
-										+ '	<div class="article-footer">{{{articleFooter}}}</div>'
+										+ '	<div class="article-footer">'
+										+ '		<h2>Partager</h2>'
+										+ '		{{{articleFooter}}}'
+										+ '	</div>'
 										+ '</div>'
 
 			Mustache.parse(template)
@@ -184,7 +187,7 @@ var TemplateEngine = (function() {
 			var rendered = Mustache.render(template,
 				{
 					"main-header": getMainHeaderTemplate(datas.header),
-					"main-footer": getMainFooterTemplate()
+					"main-footer": getMainFooterTemplate(datas.header.categories)
 				})
 
 			hideContent(contentElement + ', ' + headerArticleElement)
@@ -282,8 +285,32 @@ var TemplateEngine = (function() {
 			return Mustache.render(template, article)
 		}
 
-		function getMainFooterTemplate() {
-			return '<footer id="main-footer"></footer>'
+		function getMainFooterTemplate(categories) {
+			var template = '<footer id="main-footer">'
+										+ '	<div class="container">'
+										+ '		<div class="row">'
+										+ '			<div class="main-footer-text-container col-sm-4 col-md-4">'
+										+ '				<div class="main-footer-text-legal-mention">2016 © Kitsch & Chick - site web by Kitsch & Chick Team</div>'
+										+ '			</div>'
+										+ '			<div class="main-footer-sharing col-sm-4 col-md-4">'
+										+ '				<h2>Rejoins-nous</h2>'
+										+ '				{{{sharing}}}'
+										+ '			</div>'
+										+ '			<div class="main-footer-logo col-sm-2 col-md-2">'
+										+ ' 			<img src="/assets/images/flamingo_triangle.png" />'
+										+ '			</div>'
+										+ ' 	</div>'
+										+ '	</div>'
+										+ '</footer>'
+										
+			Mustache.parse(template)				
+			
+			var renderedNavUl = getNavItemTemplate(categories)
+			var renderedSharing = getSharingFooter()
+			
+			var renderer = Mustache.render(template, {"nav-ul-content" : renderedNavUl , "sharing" : renderedSharing})
+						
+			return renderer;
 		}
 
 		/*--------getListArticlesTemplate------------*/
@@ -384,16 +411,16 @@ var TemplateEngine = (function() {
 		/*------------------------------------*/
 		
 		/*--------getSharingFooter------------*/
-		function getSharingFooter(suffixe){
-			var template = '<div class="row"><h2>Partager</h2>'
+		function getSharingFooter(suffixe = ''){
+			var template = '<div class="row">'
 									+ '	<div class="network-icones">{{{icones}}}</div>'
 									+ '</div>'
 			
 			Mustache.parse(template)
 			
-			var socialNetWork =["facebook","twitter","google+","pinterest","tumblr"]
+			var socialNetWork =["facebook","twitter","googleplus","pinterest","tumblr"]
 			
-			var iconeTemplate = '<div class="network-icone">'
+			var iconeTemplate = '<div class="network-icone network-{{netWork}}">'
 										+ '	<a href="#" title="{{netWork}}"><img src="/assets/images/socialNetWork/{{picture}}.png" alt="{{netWork}}"/></a>'
 										+ '</div>'
 			
