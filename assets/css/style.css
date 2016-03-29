@@ -63,6 +63,23 @@ table {
 	left: 15px;
 }
 
+a.hvr,
+.hvr > a {
+	text-decoration: none !important;
+}
+
+.hvr-sweep-to-right::before {
+	background-color: #3e9994;
+}
+
+.hvr-bubble-float-left::before{
+	border-color: transparent #fd6c6c transparent transparent;
+}
+
+.hvr-bubble-float-right::before {
+	border-color: transparent transparent transparent #fd6d6c;
+}
+
 #main-header {
 	position: relative;
 }
@@ -113,7 +130,10 @@ table {
 	text-decoration: underline;
 }
 
-.main-header-highlight-container {
+.main-header-highlight-img-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
 	overflow: hidden;
 }
 

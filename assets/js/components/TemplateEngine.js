@@ -19,10 +19,10 @@ var TemplateEngine = (function() {
 			return $(element).html(content).promise()
 		}
 
-		function getLinktemplate(datas) {
-			var template = '<a href="{{{url}}}" title="{{{title}}}">{{{title}}}</a>'
+		function getLinktemplate(datas, htmlClass = "") {
+			var template = '<a href="{{{datas.url}}}" title="{{{datas.title}}}" class="{{{htmlClass}}}">{{{datas.title}}}</a>'
 			Mustache.parse(template)
-			return Mustache.render(template, datas)
+			return Mustache.render(template, {"datas": datas, "htmlClass": htmlClass})
 		}
 
 		function renderArticleTemplate(datas) {
@@ -42,7 +42,7 @@ var TemplateEngine = (function() {
 			Mustache.parse(template)
 			var linksRendered = ''
 			$.each(datas.categories, function(i, category) {
-				linksRendered += getLinktemplate(category)
+				linksRendered += getLinktemplate(category, "hvr hvr-sweep-to-right")
 			})
 			datas.categoriesLinks = linksRendered
 			
@@ -247,14 +247,20 @@ var TemplateEngine = (function() {
 
 		function getHeaderArticleTemplate(article) {
 			var template 	= '<div class="main-header-highlight-article">'
-										+ ' {{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
+										+ ' <div class="main-header-highlight-img-container">{{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}</div>'
 										+ '	<div class="main-header-highlight-article-text">'
-										+ '		<a href="/article/{{id}}" title="{{title}}" class="main-header-highlight-article-text-title">{{title}}</span></a>'
+										+ '		{{{link}}}'
 										+ '		<span class="main-header-highlight-article-text-author">{{author}}</span>'
 										+ '	</div>'
 										+ '</div>'
 
 			Mustache.parse(template)
+
+			article.link = getLinktemplate(
+				{
+					"url": '/article/' + article.id,
+					"title": article.title
+				}, "hvr hvr-bubble-float-left main-header-highlight-article-text-title")
 
 			return Mustache.render(template, article)
 		}
@@ -265,18 +271,16 @@ var TemplateEngine = (function() {
 
 		/*--------getListArticlesTemplate------------*/
 		function getListArticlesTemplate(datas) {
-			var articleListTemplate = '<div class="row article-list">{{{articles}}}</div>'
-
-			Mustache.parse(articleListTemplate)
+			var articleListTemplate = '<div class="row article-list">{{{articlesRendered}}}</div>'
 
 			var articleTemplate = '<div class="article-list-item col-xs-12 col-sm-{{sizeCols}}">'
-													+ '	<span class="arcitle-list-item-categories">{{{categoriesLinks}}}</span>'
+													+ '	<span class="arcitle-list-item-categories">{{{article.categoriesLinks}}}</span>'
 													+ ' <div class = "article-list-item-images-container">'
-													+ ' 	{{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" />{{/image}}'
+													+ ' 	{{#article.image}}<img src="{{article.image}}" alt="{{article.title}}" title="{{article.title}}" />{{/article.image}}'
 													+ ' </div>'
 													+ ' <div class = "article-list-item-text">'
-													+ '		<h2 class="article-list-item-text-title"><a href="/article/{{id}}" title="{{title}}">{{title}}</a></h2>'
-													+ '		<h3 class="article-list-item-text-author">{{author}}</h3>'
+													+ '		<h2 class="article-list-item-text-title hvr hvr-bubble-float-right">{{{article.link}}}</h2>'
+													+ '		<h3 class="article-list-item-text-author">{{article.author}}</h3>'
 													+ ' </div>'
 													+ '</div>'
 
@@ -298,7 +302,7 @@ var TemplateEngine = (function() {
 			$.each(datas, function(i, article) {
 				var linksRendered = ''
 				$.each(article.categories, function(i, category) {
-					linksRendered += getLinktemplate(category)
+					linksRendered += getLinktemplate(category, "hvr hvr-sweep-to-right")
 				})
 				article.categoriesLinks = linksRendered
 				
@@ -306,12 +310,14 @@ var TemplateEngine = (function() {
 					if(i%5 < 2) sizeCols = 6;
 					else sizeCols = 4;
 				}
-				article.sizeCols = sizeCols;
+
+				article.link = getLinktemplate({'url': '/article/' + article.id, 'title': article.title})
 				
-				articlesRendered += Mustache.render(articleTemplate, article)
+				articlesRendered += Mustache.render(articleTemplate, {"article": article, "sizeCols": sizeCols})
 			})
 
-			var rendered = Mustache.render(articleListTemplate, {"articles": articlesRendered})
+			Mustache.parse(articleListTemplate)
+			var rendered = Mustache.render(articleListTemplate, {'articlesRendered': articlesRendered})
 			
 			return rendered;
 		}

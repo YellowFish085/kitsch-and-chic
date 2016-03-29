@@ -9,6 +9,7 @@
 		
 		<link href='https://fonts.googleapis.com/css?family=Raleway:500,700,300,400' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/hover.min.css">
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<script src="/assets/js/vendor/jquery.min.js"></script>
 		<script src="/assets/js/vendor/bootstrap.min.js"></script>
