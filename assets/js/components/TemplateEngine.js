@@ -181,7 +181,7 @@ var TemplateEngine = (function() {
 			var template 	= '{{{main-header}}}'
 										+ '<div id="content"></div>'
 										+ '{{{main-footer}}}'
-										+ '<div id="loading">Loading</div>'
+										+ '<div id="loading"><div class="loading-center"><img src="/assets/images/flamingo_pink.png"/><p>Loading...</p></div></div>'
 
 			Mustache.parse(template)
 			var rendered = Mustache.render(template,
@@ -289,15 +289,13 @@ var TemplateEngine = (function() {
 			var template = '<footer id="main-footer">'
 										+ '	<div class="container">'
 										+ '		<div class="row">'
-										+ '			<div class="main-footer-text-container col-sm-4 col-md-4">'
-										+ '				<div class="main-footer-text-legal-mention">2016 © Kitsch & Chick - site web by Kitsch & Chick Team</div>'
+										+ '			<div class="main-footer-text-container col-xs-12 col-sm-4 col-md-4">'
+										+ '				<div class="main-footer-text-legal-mention"><span>2016 © Kitsch & Chick - site web by Kitsch & Chick Team</span></div>'
 										+ '			</div>'
-										+ '			<div class="main-footer-sharing col-sm-4 col-md-4">'
-										+ '				<h2>Rejoins-nous</h2>'
-										+ '				{{{sharing}}}'
-										+ '			</div>'
-										+ '			<div class="main-footer-logo col-sm-2 col-md-2">'
-										+ ' 			<img src="/assets/images/flamingo_triangle.png" />'
+										+ '			<div class="main-footer-sharing col-xs-12 col-sm-4 col-md-4">'
+										+ '				<div class="row">'
+										+ '					<h2 class="hidden-xs">Rejoins-nous</h2>'
+										+ '					{{{sharing}}}'
 										+ '			</div>'
 										+ ' 	</div>'
 										+ '	</div>'
@@ -420,15 +418,21 @@ var TemplateEngine = (function() {
 			
 			var socialNetWork =["facebook","twitter","googleplus","pinterest","tumblr"]
 			
-			var iconeTemplate = '<div class="network-icone network-{{netWork}}">'
+			var iconeTemplate = '<div class="network-icone network-{{netWork}} col-xs-1 col-sm-2 {{#first}}col-sm-offset-1 col-xs-offset-1{{/first}}">'
 										+ '	<a href="#" title="{{netWork}}"><img src="/assets/images/socialNetWork/{{picture}}.png" alt="{{netWork}}"/></a>'
 										+ '</div>'
 			
 			Mustache.parse(iconeTemplate)
 			
 			var renderedList = ''
+			var count = 0
 			$.each(socialNetWork, function(i,netWork){
-				renderedList += Mustache.render(iconeTemplate, {'netWork' : netWork, 'picture': netWork + suffixe})
+				var first = false
+				if (count == 0) {
+					first = true
+				}
+				renderedList += Mustache.render(iconeTemplate, {'netWork' : netWork, 'picture': netWork + suffixe, 'first': first})
+				count++
 			})
 			
 			return Mustache.render(template, {"icones": renderedList})
@@ -441,7 +445,6 @@ var TemplateEngine = (function() {
 			renderTemplate: function(template, datas) {
 				this.displayPreloader()
 				.then(function() {
-					console.log('lol')
 					switch (template) {
 						case 'article':
 							return renderArticleTemplate(datas)
