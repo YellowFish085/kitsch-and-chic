@@ -178,8 +178,11 @@ var TemplateEngine = (function() {
 		/*--------------------------------------*/
 		
 		function renderHtmlTemplate(datas) {
-			var template 	= '{{{main-header}}}'
-										+ '<div id="content"></div>'
+			var template 	= '<div class="wrapper">'
+										+ '	{{{main-header}}}'
+										+ '	<div id="content"></div>'
+										+ '	<div class="push"></div>'
+										+ '</div>'
 										+ '{{{main-footer}}}'
 										+ '<div id="loading"><div class="loading-center"><img src="/assets/images/flamingo_pink.png"/><p>Loading...</p></div></div>'
 

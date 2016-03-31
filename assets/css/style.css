@@ -42,9 +42,26 @@ table {
 	border-spacing: 0;
 }
 
+html, body, #app {
+	height: 100%;
+}
 
 body {
 	background-image: url('/assets/images/bg.jpg');
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	padding-bottom: 150px;
+}
+
+#main-footer {
+	position: relative;
+	margin-top: -150px;
+	height: 150px;
+	clear: both;
 }
 
 #main-header,
