@@ -295,7 +295,7 @@ var TemplateEngine = (function() {
 										+ '			<div class="main-footer-sharing col-xs-12 col-sm-4 col-md-4">'
 										+ '				<div class="row">'
 										+ '					<h2 class="hidden-xs">Rejoins-nous</h2>'
-										+ '					{{{sharing}}}'
+										+ '					<div class="col-xs-12 col-sm-12">{{{sharing}}}</div>'
 										+ '			</div>'
 										+ ' 	</div>'
 										+ '	</div>'
