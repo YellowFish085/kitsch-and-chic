@@ -99,7 +99,7 @@ var TemplateEngine = (function() {
 						img.removeClass('half-size-picture')
 					}
 					else if(img.attr(typeSelector).indexOf("complete-size-picture") != -1){
-						divImgContainer.addClass('complete-size-picture col-xs-6 col-sm-12')
+						divImgContainer.addClass('complete-size-picture col-xs-12 col-sm-12')
 						img.removeClass('complete-size-picture')
 					}
 					
