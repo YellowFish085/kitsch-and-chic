@@ -261,6 +261,12 @@ a.hvr,
 	/*background : green;*/
 }
 
+.article-list-item-images-container img{
+	position : relative;
+	top : 100%;
+	margin-top : -200%;
+}
+
 	/* -- .article-list-item-text */
 .article-list-item-text {
 	position : absolute;
@@ -632,6 +638,7 @@ a.hvr,
 	.article-list-item-images-container img{
 		max-width : 100%;
 		height : auto;
+		
 	}
 
 	
@@ -710,6 +717,10 @@ a.hvr,
 	.col-sm-6 .article-list-item-images-container img{
 		max-width : 100%;
 		height : auto;
+	}
+	
+	.network-icone{
+		padding : 0px 5px 0px 5px;
 	}
 }
 
