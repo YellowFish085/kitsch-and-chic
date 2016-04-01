@@ -264,7 +264,7 @@ a.hvr,
 .article-list-item-images-container img{
 	position : relative;
 	top : 100%;
-	margin-top : -200%;
+	margin-top : -100%;
 }
 
 	/* -- .article-list-item-text */
