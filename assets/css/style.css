@@ -406,6 +406,7 @@ a.hvr,
 
 .complete-size-picture img.portrait, .complete-size-picture img.paysage, .half-size-picture img.portrait{
 	max-width : 100%;
+	min-width : 100%;
 	height : auto;
 	top : 100%;
 	margin-top : -200%;
@@ -413,6 +414,8 @@ a.hvr,
 
 .half-size-picture img.paysage{
 	max-height : 100%;
+	height : auto;
+	min-width : 100%;
 	width : auto;
 	left : 100%;
 	margin-left : -200%;
