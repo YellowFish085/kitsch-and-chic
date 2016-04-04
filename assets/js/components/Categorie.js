@@ -27,7 +27,7 @@ var Category = (function() {
 			// Public
 			loadCategories: function() {
 				return	$.ajax({
-									url: '/assets/json/categories.json',
+									url: URL_base + '/assets/json/categories.json',
 									cache: false,
 									contentType: "application/json; charset=utf-8",
 									dataType: "json"

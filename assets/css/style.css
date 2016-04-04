@@ -184,7 +184,6 @@ a.hvr,
 
 .main-header-highlight-article {
 	position: relative;
-	/*background : green;*/
 }
 
 .main-header-highlight-article img {
@@ -457,7 +456,6 @@ a.hvr,
 	margin : 30px 0px 0px 0px;
 	height : 400px;
 	width : 100%;
-	background : blue;
 	overflow : hidden;
 	position : relative;
 	text-align : center;
@@ -501,7 +499,6 @@ a.hvr,
 	background : #6ac2bd;
 }
 .astuce-step-content-number h2 {
-	font-family: 'Raleway';
 	color: #FFFFFF;
 	line-height : 90px;
 	font-size : 60px;

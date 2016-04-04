@@ -1,3 +1,3 @@
 <?php
-define('SITE_URL', 'http://127.0.0.1');
+define('SITE_URL', 'http://kitschic.local');
 ?>

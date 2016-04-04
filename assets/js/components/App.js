@@ -138,7 +138,8 @@ var App = function(datas) {
 	
 	// Private helpers
 	var getUrlParameters = function() {
-		var params = window.location.pathname.split("/");
+		var url = window.location.href
+		var params = url.split("/");
 
 		while (params[0] == "") {
 			params.shift();

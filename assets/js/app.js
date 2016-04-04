@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	$.when(
-		$.getScript('/assets/js/components/Categorie.js'),
-		$.getScript('/assets/js/components/Article.js'),
-		$.getScript('/assets/js/components/TemplateEngine.js'),
-		$.getScript('/assets/js/components/App.js'),
+		$.getScript(URL_base + '/assets/js/components/Categorie.js'),
+		$.getScript(URL_base + '/assets/js/components/Article.js'),
+		$.getScript(URL_base + '/assets/js/components/TemplateEngine.js'),
+		$.getScript(URL_base + '/assets/js/components/App.js'),
 		$.Deferred(function(deferred){
 			$(deferred.resolve)
 		})

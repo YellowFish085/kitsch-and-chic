@@ -20,7 +20,7 @@ var TemplateEngine = (function() {
 		}
 
 		function getLinktemplate(datas, htmlClass = "") {
-			var template = '<a href="{{{datas.url}}}" title="{{{datas.title}}}" class="{{{htmlClass}}}">{{{datas.title}}}</a>'
+			var template = '<a href="' + URL_base + '{{{datas.url}}}" title="{{{datas.title}}}" class="{{{htmlClass}}}">{{{datas.title}}}</a>'
 			Mustache.parse(template)
 			return Mustache.render(template, {"datas": datas, "htmlClass": htmlClass})
 		}
@@ -134,7 +134,6 @@ var TemplateEngine = (function() {
 
 		/*--------renderHomeTemplate------------*/
 		function renderHomeTemplate(datas) {
-			
 			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
 			
 			var homeListTemplate = '<div id="welcomeMessage"><h2>Bienvenu <3</h2></div>'
@@ -184,7 +183,7 @@ var TemplateEngine = (function() {
 										+ '	<div class="push"></div>'
 										+ '</div>'
 										+ '{{{main-footer}}}'
-										+ '<div id="loading"><div class="loading-center"><img src="/assets/images/flamingo_pink.png"/><p>Loading...</p></div></div>'
+										+ '<div id="loading"><div class="loading-center"><img src="' + URL_base + '/assets/images/flamingo_pink.png"/><p>Loading...</p></div></div>'
 
 			Mustache.parse(template)
 			var rendered = Mustache.render(template,
@@ -210,10 +209,10 @@ var TemplateEngine = (function() {
 													+ '	<div class="container">'
 													+ '		<div class="row">'
 													+ '			<div class="main-header-logo col-sm-3 col-md-4 hidden-xs">'
-													+ ' 			<img src="/assets/images/kitsch_and_chic_logo.png" />'
+													+ ' 			<img src="' + URL_base + '/assets/images/kitsch_and_chic_logo.png" />'
 													+ '			</div>'
 													+ '			<div class="main-header-logo-mobile col-sm-3 col-md-4 visible-xs hidden-sm">'
-													+ ' 			<img src="/assets/images/kitsch_and_chic_logo_mobile.png" />'
+													+ ' 			<img src="' + URL_base + '/assets/images/kitsch_and_chic_logo_mobile.png" />'
 													+ '			</div>'
 													+ '			<div class="main-header-nav col-sm-9 col-md-8 col-xs-12">{{{nav}}}</div>'
 													+ '			<div class="main-header-nav-bg absolute-in-row hidden-xs"></div>'
@@ -235,7 +234,7 @@ var TemplateEngine = (function() {
 		function getNavTemplate(categories) {
 			var navTemplate = '<nav>'
 											+ '	<ul class="main-nav">'
-											+ '		<li><a href="/" title="Accueil">Accueil</a></li>'
+											+ '		<li><a href="' + URL_base + '" title="Accueil">Accueil</a></li>'
 											+ '		{{{nav-ul-content}}}'
 											+ '	</ul>'
 											+ '</nav>'
@@ -273,7 +272,7 @@ var TemplateEngine = (function() {
 
 		function getHeaderArticleTemplate(article) {
 			var template 	= '<div class="main-header-highlight-article">'
-										+ ' <div class="main-header-highlight-img-container">{{#image}}<img src="{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}</div>'
+										+ ' <div class="main-header-highlight-img-container">{{#image}}<img src="' + URL_base + '{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}</div>'
 										+ '	<div class="main-header-highlight-article-text">'
 										+ '		{{{link}}}'
 										+ '		<span class="main-header-highlight-article-text-author">{{author}}</span>'
@@ -324,7 +323,7 @@ var TemplateEngine = (function() {
 			var articleTemplate = '<div class="article-list-item col-xs-12 col-sm-{{sizeCols}}">'
 													+ '	<span class="arcitle-list-item-categories">{{{article.categoriesLinks}}}</span>'
 													+ ' <div class = "article-list-item-images-container">'
-													+ ' 	{{#article.image}}<img src="{{article.image}}" alt="{{article.title}}" title="{{article.title}}" />{{/article.image}}'
+													+ ' 	{{#article.image}}<img src="' + URL_base + '{{article.image}}" alt="{{article.title}}" title="{{article.title}}" />{{/article.image}}'
 													+ ' </div>'
 													+ ' <div class = "article-list-item-text">'
 													+ '		<h2 class="article-list-item-text-title hvr hvr-bubble-float-right">{{{article.link}}}</h2>'
@@ -425,7 +424,7 @@ var TemplateEngine = (function() {
 			var socialNetWork =["facebook","twitter","googleplus","pinterest","tumblr"]
 			
 			var iconeTemplate = '<div class="network-icone network-{{netWork}} col-xs-1 col-sm-2 {{#first}}col-sm-offset-1 col-xs-offset-1{{/first}}">'
-										+ '	<a href="#" title="{{netWork}}"><img src="/assets/images/socialNetWork/{{picture}}.png" alt="{{netWork}}"/></a>'
+										+ '	<a href="#" title="{{netWork}}"><img src="' + URL_base + '/assets/images/socialNetWork/{{picture}}.png" alt="{{netWork}}"/></a>'
 										+ '</div>'
 			
 			Mustache.parse(iconeTemplate)

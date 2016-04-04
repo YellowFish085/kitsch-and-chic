@@ -30,7 +30,7 @@ var Article = (function() {
 			// Public
 			loadArticles: function() {
 				return	$.ajax({
-									url: '/assets/json/articles.json',
+									url: URL_base + '/assets/json/articles.json',
 									cache: false,
 									contentType: "application/json; charset=utf-8",
 									dataType: "json"
