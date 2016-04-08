@@ -134,6 +134,7 @@ var TemplateEngine = (function() {
 
 		/*--------renderHomeTemplate------------*/
 		function renderHomeTemplate(datas) {
+			
 			var articleHeaderRendered = getHeaderArticleTemplate(datas.lastArticle)
 			
 			var homeListTemplate = '<div id="welcomeMessage"><h2>Bienvenu <3</h2></div>'
@@ -272,7 +273,7 @@ var TemplateEngine = (function() {
 
 		function getHeaderArticleTemplate(article) {
 			var template 	= '<div class="main-header-highlight-article">'
-										+ ' <div class="main-header-highlight-img-container">{{#image}}<img src="' + URL_base + '{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}</div>'
+																				+ ' <div class="main-header-highlight-img-container">{{#image}}<img src="' + URL_base + '{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}</div>'
 										+ '	<div class="main-header-highlight-article-text">'
 										+ '		{{{link}}}'
 										+ '		<span class="main-header-highlight-article-text-author">{{author}}</span>'
@@ -373,7 +374,15 @@ var TemplateEngine = (function() {
 		/*--------getClassicArticle------------*/
 		function getClassicArticle(datas){
 			var template = '<div class="article-description">{{{description}}}</div>'
-										+ '<div class="article-content">{{{content}}}</div>'
+										+ '<div class="article-content">{{{contents}}}</div>'
+			
+			var contents = "";
+			$.each(datas.content, function(i,element){
+				if (element.indexOf("<img") == -1)contents += "<p>"+element+"</p>"
+				else contents += element;
+			})
+			
+			datas.contents = contents;
 			
 			Mustache.parse(template)
 			

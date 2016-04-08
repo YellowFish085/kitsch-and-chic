@@ -14,7 +14,7 @@ var App = function(datas) {
 
 	var processView = function() {
 		var params = getUrlParameters()
-
+		console.log(params);
 		if (params.length == 1) {
 			if (params[0] == 'about') {
 				console.Log('|| Display about')
@@ -138,9 +138,8 @@ var App = function(datas) {
 	
 	// Private helpers
 	var getUrlParameters = function() {
-		var url = window.location.href
+		var url = window.location.href.replace(URL_base,"")
 		var params = url.split("/");
-
 		while (params[0] == "") {
 			params.shift();
 		}

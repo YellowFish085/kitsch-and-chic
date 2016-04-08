@@ -2,23 +2,34 @@
 	"articles": [
 		{
 			"id": 1,
-			"title": "Article 1",
-			"author": "Author 1",
-			"subtitle": "Subtitle 1",
-			"categories": ["cuisine", "salle-de-bain","interieurs"],
-			"image": "/assets/images/design-retro-deco-couleurs-flashy.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"title": "Adra Bataille",
+			"author": "Laura Bourgeois - residences-decoration",
+			"subtitle": "Du retro modern à la française",
+			"categories": ["createurs"],
+			"image": "/assets/images/articles/designer_adra_bataille/Adra-Bataille-Conseil-en-decoration-et-amenagement-d-interieur-Le-Bon-March---Rive-Gauche-1-1.jpg",
+			"description": "Adra Bataille est une designer française travailant dans le retro.",
+			"content": [
+				"Depuis son plus jeune âge Adra Bataille s’intéresse à la décoration et l’architecture. Elle suit les membres de sa famille dans la restauration de leurs maisons et est par la suite régulièrement sollicitée par son entourage pour des conseils de stylisme et d’aménagements en tous genres. De 1998 à 2008, Adra réalise 4 chantiers successifs à Paris et au Cap Ferret puis conçoit et décore deux Hôtels. Les espaces sont épurés, les meubles confortables et l’ambiance allie design et douceur. Elle s’associe aujourd’hui à l’espace Maison du Bon Marché Rive Gauche afin de conseiller les clients dans leur aménagement d’espace intérieur en tout genre (Lofts, maisons de campagne, salle de bains, cuisines, bureaux…). Vous pouvez la rencontrer sur RDV et lui poser toutes vos questions concernant vos petits ou grands chantiers et ainsi créer l’intérieur dont vous rêvez.",
+				"<div class='row'><img src='/assets/images/articles/designer_adra_bataille/loft-design-interieur_06.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/designer_adra_bataille/decoration-design-interieur-adra-bataille_018.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/designer_adra_bataille/decoration-design-interieur-adra-bataille_032.jpg' class='half-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/designer_adra_bataille/decoration-design-interieur-adra-bataille_004.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/designer_adra_bataille/loft-design-interieur_01.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/designer_adra_bataille/loft-design-interieur_02.jpg' class='complete-size-picture paysage'/></div>"
+			]
 		},
 		{
 			"id": 2,
-			"title": "Article 2",
-			"author": "Author 2",
-			"subtitle": "Subtitle 2",
-			"categories": ["cuisine", "insolites","interieurs"],
-			"image": "/assets/images/un-bar-arlequin_5339411-2.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
-			"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!</p>"
+			"title": "Un chalet signé Wilmotte",
+			"author": " Véronique Guilpain - residences-decoration",
+			"subtitle": "Un chalet contemporain aux lignes épurées signé Wilmotte",
+			"categories": ["sejour","chambre","interieurs"],
+			"image": "/assets/images/articles/article_2/121-Wilmotte-Megeve_06.jpg",
+			"description": "Ce chalet hyper contemporain à Mégève, magnifique refuge des neiges signé Jean-Michel Wilmotte et décoré par Chrystèle Gozlan, sert d’écrin à une collection d’art ultra pointue.",
+			"content":[
+				"Un couple de collectionneurs, propriétaire d’un terrain idéalement placé sur les hauteurs de Megève fait appel aux talents combinés de l’architecte Jean-Michel Wilmotte et de la décoratrice Chrystèle Gozlan (Ipso-Facto Studio), pour construire un chalet de vacances. Le projet est remarquable car ils possèdent un certain nombre d’oeuvres importantes que la décoratrice doit mettre en scène. Dès lors, le tandem travaille de concert sur les espaces, le choix des matériaux, l’emplacement des oeuvres…",
+				"<div class='row'><img src='/assets/images/articles/article_2/121-Wilmotte-Megeve_06.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_2/121-Wilmotte-Megeve_02.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_2/121-Wilmotte-Megeve_03.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_2/121-Wilmotte-Megeve_04.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_2/121-Wilmotte-Megeve_07.jpg' class='half-size-picture portrait'/></div>"
+			] 
 		},
 		{
 			"id": 3,
@@ -28,38 +39,64 @@
 			"categories": ["cuisine", "createurs"],
 			"image": "/assets/images/cqv2u6caa.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet, </p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content":[
+				"Lorem ipsum dolor sit amet,",
+				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"		
+			]
 		},
 		{
 			"id": 4,
-			"title": "Article 4",
-			"author": "Author 4",
-			"subtitle": "Subtitle 4",
-			"categories": ["salle-de-bain","interieurs"],
-			"image": "/assets/images/033.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"title": "Chez Stella Cadente",
+			"author": "Frédérique de Granvilliers",
+			"subtitle": "Chez Stella Cadente",
+			"categories": ["sejour","chambre","interieurs", "createurs"],
+			"image": "/assets/images/articles/article_stella_cadente/16_STELLA_CADENTE__3276.jpg",
+			"description": "Après avoir retwisté une maison de charme du quartier de Mouzaïa, petit bout de campagne parisien, la styliste bouscule un haussmannien du XVIIe. Etrange et pénétrant…",
+			"content": [
+				"Créatrice fantasque, Stella Cadente imagine un univers follement bohème, anti conformiste et divinement féminin, à la croisée des mythologies. Un monde hybride où les princesses osent s’approprier les attributs des sorcières, où l’insolite convole en justes noces avec le grand style, où le bon goût s’acoquine avec le kitsch.",
+				"<div class='row'><img src='/assets/images/articles/article_stella_cadente/18_STELLA_CADENTE__3293.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_stella_cadente/19_STELLA_CADENTE__3302.jpg' class='half-size-picture portrait'/></div>",
+				"Vêtements, lingerie, parfums, bijoux, accessoires…, Stanislassia Cadente alias Stella Cadente, est une incroyable touche-à-tout qui œu­vre en toute liberté, imaginant tour à tour un Hôtel Original à Paris, deux projets hôteliers au Brésil, l’étage de lingerie des Galeries Lafayette, une collection de chaussures, des concepts de boutiques pour des mar­ques chinoises quand elle n’assure pas la direction artistique de Rosy, Lejaby ou encore Sephora.",
+				"<div class='row'><img src='/assets/images/articles/article_stella_cadente/15_STELLA_CADENTE__3267.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_stella_cadente/12_STELLA_CADENTE__3239.jpg' class='half-size-picture portrait'/></div>",
+				"Electron libre dans la mode et le design, elle mixe fantaisie et poésie, avec une touche rock and roll que l’on retrouve dans ses chantiers déco et bien évidemment chez elle ! Son « petit théâtre parisien plein de magie », dont elle nous ouvre les portes en ex­clusivité. De son nouvel appartement, elle a conservé les codes haussmanniens, tout en le transfigurant de tonalités un brin décalées.",
+				"S’interdisant les mélanges hasardeux, elle a opté pour le vert, et choisi qua­tre teintes différentes qu’elle a spécialement composées. Ainsi pour la salle à manger où sa tribu se retrouve le soir, elle a choisi un vert bouteille foncé, pour accentuer le côté confiné de la pièce : « Avec un éclairage à la bougie, c’est juste superbe ! » Dans le salon, un vert Véronèse s’avère très agréable à vivre et s’harmonise avec le miroir doré et le parquet en merisier. La lumière de la pièce est ainsi conservée, et les moulures des plafonds mises en valeur. Dans le hall, un vert presque turquoise et dans sa chambre, une couleur qui oscille entre le bleu de Prusse et le vert foncé.",
+				"<div class='row'><img src='/assets/images/articles/article_stella_cadente/07_STELLA_CADENTE__3261.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_stella_cadente/11_STELLA_CADENTE__3215.jpg' class='half-size-picture portrait'/></div>",
+				"Pour le mobilier, de belles pièces scandinaves des années 40 à 50 cohabitent avec un secrétaire Louis XVI et un paravent chinois. « J’aime le mélange des genres, mettre en scène des canapés de Didier Gomez pour Cinna, et du mobilier d’époque, la lampe de Tom Dixon et des rideaux à fran­ges de mes propres collections. « Aujourd’hui, les femmes portent un top H&M avec une veste Saint Laurent, des chaussures Prada et un sac Zara. Dans les maisons, on peut aussi s’amuser à associer les styles sans faux pas fashion. » Comme pour les vêtements, elle aime changer, tout en restant dans la continuité côté couleur, lumière et animaux naturalisés !",
+				"<div class='row'><img src='/assets/images/articles/article_stella_cadente/08_STELLA_CADENTE__3173.jpg' class='complete-size-picture paysage'/></div>",
+				"Son dernier coup de cœur ? Un paon, cadeau de son homme et de ses quatre enfants, invité à dormir dans sa chambre qu’elle a scénarisée pour lui donner un côté intime : tapis sur-mesure en velours bleu, tête de lit très confortable… Résultat, on s’y sent tellement bien que les enfants adorent s’y vautrer, et qu’elle est rapidement devenue un deuxième salon. Au mur, des photos sur les Amazones réalisées avec son associé Florian Claudel. Des fem­mes habillées de parures de bijoux qui furent exposées au Sofitel Arc de Triomphe. Et partout dans l’appartement, en clin d’œil à son nom qui est aussi sa griffe, des étoiles, « qui renvoient un message positif depuis le ciel »."
+			]
 		},
 		{
 			"id": 5,
-			"title": "Article 5",
-			"author": "Author 5",
-			"subtitle": "Subtitle 5",
+			"title": "Une télévision vintage en bar",
+			"author": "Ben - Le blog du kitsch",
+			"subtitle": "Transformer une télévision vintage en bar à liqueurs",
 			"categories": ["sejour", "astuces"],
-			"image": "/assets/images/cabinet-liqueur-tv-01-art.jpg",
+			"image": "/assets/images/articles/astuce_1/cabinet-liqueur-tv-01-art.jpg",
 			"description": "En voilà une bonne idée bien réalisée comme on aime : le Norvégien Kjell Are propose de transformer un poste de télévision vintage en bar à liqueurs ! Après avoir récupéré pour 30$ un modèle Tandberg TV3-47, notre bricoleur a vidé proprement le poste de tout son contenu électronique, ainsi qu’enlevé la vitre de l’écran. Il adapte ensuite des planches de bois pour faire des parois propres à l’intérieur et rajoute un éclairage sympa. Pour les plus curieux (mais surtout les plus bricoleurs) qui voudraient tenter la transformation, vous pouvez retrouver le descriptif de son processus complet de fabrication en suivant ce lien. Bon courage !",
 			"content": [
 					{
-						"image" : "/assets/images/cabinet-liqueur-tv-01.jpg",
-						"title" : "Trouver une télé"
+						"image" : "/assets/images/articles/astuce_1/cabinet-liqueur-tv-02.jpg",
+						"title" : "Trouver une télé",
+						"content" : "Pour ça rien de plus simple, aller chiner dans toutes les bonnes brocantes."
 					},
 					{
-						"image" : "/assets/images/cabinet-liqueur-tv-05.jpg",
+						"image" : "/assets/images/articles/astuce_1/cabinet-liqueur-tv-05.jpg",
 						"title" : "Vider la",
-						"content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in rhoncus elit. Curabitur sodales, nisi ac suscipit accumsan, dui magna accumsan augue, sit amet dapibus magna tellus vel dolor. Integer ante magna, fringilla quis sodales eu, pulvinar vel nulla. Proin volutpat, elit vel consectetur ultrices, augue tellus aliquet massa, nec mollis lectus velit eget nisi. Aenean at tellus ac velit fermentum rhoncus. In auctor odio sed ligula vehicula pulvinar."
+						"content" : "Retirez tous les éléments éléctroniques."
 					},
 					{
-						"image" : "/assets/images/cabinet-liqueur-tv-10.jpg",
+						"image" : "/assets/images/articles/astuce_1/cabinet-liqueur-tv-07.jpg",
+						"title" : "Installer un coffrage",
+						"content" : "À la place de l'écran, installez un coffrage en bois, de la couleur que vous voulez. Il est préférable de le peintre en blanc. De cette manière, la couleur de l'éclairage se verra plus."
+					},
+					{
+						"image" : "/assets/images/articles/astuce_1/cabinet-liqueur-tv-08.jpg",
+						"title" : "L'éclairage",
+						"content" : "Pour l'éclairage, une simple guirlande à LED fera l'affaire. Installez là derrière le cadre de l'écran."
+					},
+					{
+						"image" : "/assets/images/articles/astuce_1/cabinet-liqueur-tv-10.jpg",
 						"title" : "Résultat",
 						"content" : "Ah bah c'est bien, voilà."
 					}
@@ -73,7 +110,11 @@
 			"categories": ["cuisine", "insolites","interieurs"],
 			"image": "/assets/images/1791.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/> <p>consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet,",
+				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			]
 		},
 		{
 			"id": 7,
@@ -83,17 +124,27 @@
 			"categories": ["cuisine", "insolites","interieurs"],
 			"image": "/assets/images/538.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><div class='row'><img src='/assets/images/1787.jpg' class='half-size-picture paysage'/><img src='/assets/images/1788.jpg' class='half-size-picture paysage'/><img src='/assets/images/1790.jpg' class='complete-size-picture paysage'/></div><p>consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p><div class='row'><img src='/assets/images/1791.jpg' class='complete-size-picture paysage'/><img src='/assets/images/1793.jpg' class='half-size-picture portrait'/><img src='/assets/images/1915.jpg' class='half-size-picture portrait'/></div><p>Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet,",
+				"<div class='row'><img src='/assets/images/1787.jpg' class='half-size-picture paysage'/><img src='/assets/images/1788.jpg' class='half-size-picture paysage'/><img src='/assets/images/1790.jpg' class='complete-size-picture paysage'/></div>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?",
+				"<div class='row'><img src='/assets/images/1791.jpg' class='complete-size-picture paysage'/><img src='/assets/images/1793.jpg' class='half-size-picture portrait'/><img src='/assets/images/1915.jpg' class='half-size-picture portrait'/></div>",
+				"Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			]
 		},
 		{
 			"id": 8,
 			"title": "Article 8",
 			"author": "Author 8",
 			"subtitle": "Subtitle 8",
-			"categories": ["cuisine", "createurs"],
+			"categories": ["cuisine"],
 			"image": "/assets/images/1790.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet, </p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet,",
+				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			]
 		},
 		{
 			"id": 9,
@@ -103,7 +154,11 @@
 			"categories": ["insolites"],
 			"image": "/assets/images/chaise-rouge.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/> <p>consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet,",
+				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			]
 		},
 		{
 			"id": 10,
@@ -113,7 +168,11 @@
 			"categories": ["passion-kitsch", "insolites","interieurs"],
 			"image": "/assets/images/Sans titre - 1.png",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet,",
+				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			]
 		},
 		{
 			"id": 11,
@@ -121,9 +180,11 @@
 			"author": "Author 11",
 			"subtitle": "Subtitle 11",
 			"categories": ["passion-kitsch"],
-			"image": "/assets/images/cabinet-liqueur-tv-01-art.jpg",
+			"image": "/assets/images/articles/astuce_1/cabinet-liqueur-tv-01-art.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
-			"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!"
+			]
 		},
 		{
 			"id": 12,
@@ -133,7 +194,11 @@
 			"categories": ["passion-kitsch", "insolites","interieurs"],
 			"image": "/assets/images/1791.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": "<p>Lorem ipsum dolor sit amet,</p><img src='/assets/images/538.jpg' class='complete-size-picture paysage'/><p> consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?</p>"
+			"content": [
+				"Lorem ipsum dolor sit amet,",
+				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
+				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+			]
 		}
 	]
 }
