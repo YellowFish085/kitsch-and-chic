@@ -33,16 +33,20 @@
 		},
 		{
 			"id": 3,
-			"title": "Karim Rachid",
-			"author": "Author 3",
-			"subtitle": "Subtitle 3",
+			"title": "Karim Rashid",
+			"author": "madeindesign",
+			"subtitle": "Karim Rashid le design Egyptien",
 			"categories": ["cuisine", "createurs"],
 			"image": "/assets/images/cqv2u6caa.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
+			"description": "Reconnu internationalement comme le ‘’roi de la couleur’’, Karim Rashid est l’un des designers les plus prolifiques de sa génération.",
 			"content":[
-				"Lorem ipsum dolor sit amet,",
+				"Avec plus de 3 000 créations à son actif, plus de 300 prix et récompenses attestent du succès phénoménal de cette légende vivante du design !",
 				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"		
+				"Né au Caire en 1960, Karim Rashid est élevé en Angleterre et au Canada. Après l’obtention d’un diplôme en Design industriel à Ottawa en 1982, il poursuit des études supérieures de Design à Naples en compagnie notamment d’Ettore Sottsass.  Après avoir travaillé sept ans au Canada pour KAN Industrial Designers, il ouvre sa propre enseigne à New York en 1993. Magasins, restaurants, hôtels, meubles, accessoires, produits High Tech, produits de luxe... Son travail s'étend à toutes les sphères du design.",
+				"<div class='row'><img src='/assets/images/1787.jpg' class='half-size-picture paysage'/><img src='/assets/images/1788.jpg' class='half-size-picture paysage'/><img src='/assets/images/1790.jpg' class='complete-size-picture paysage'/></div>",
+				"Son panel de clients est impressionnant allant de Alessi à Dirt Devil, de Umbra à Prada, de Miyake à Method. Karim Rashid est aussi à l'aise quand il s’agit de production de masse d’objets du quotidien que lorsqu’il s’agit du domaine du luxe avec des éditions pointues et limitées. Le but du design de Karim Rashid est toujours le même : offrir une expérience de qualité aux utilisateurs des objets. Il veut mettre à portée des masses la sensibilité de son design démocratique.",
+				"<div class='row'><img src='/assets/images/1791.jpg' class='complete-size-picture paysage'/><img src='/assets/images/1793.jpg' class='half-size-picture portrait'/><img src='/assets/images/1915.jpg' class='half-size-picture portrait'/></div>",
+				"Le style fluide du célèbre designer adepte de l'ultra minimalisme est immédiatement identifiable : coloris acidulés, lignes arrondies, sensuelles et organiques. Son design biomorphique, tout en courbes, établit une rupture avec les environnements très stricts et linéaires qui composent notre quotidien. L’univers de Karim Rashid dégage une énergie positive extraordinaire !  Karim Rashid expérimente sans cesse les formes et les couleurs, donnant naissance à des créations inédites, inattendues, jamais vues. Karim Rashid se dit d’ailleurs très déçu par les meubles de notre époque.  » Il ne s’agit que de dérivés de dérivés de dérivés de modèles conçus au XVIe siècle, explique-t-il. Pourquoi nous cramponnons-nous à ces objets ? Je n’en ai pas la moindre idée. Sans doute parce que nous avons peur d’évoluer.  » Karim Rashid, lui, ne cesse de nous surprendre !"		
 			]
 		},
 		{
@@ -104,100 +108,38 @@
 		},
 		{
 			"id": 6,
-			"title": "Article 6",
-			"author": "Author 6",
-			"subtitle": "Subtitle 6",
-			"categories": ["cuisine", "insolites","interieurs"],
-			"image": "/assets/images/1791.jpg",
+			"title": "L'imprimé Flamingo, chic ou kitsch ?",
+			"author": "Katia Fache - Marie Claire Maison",
+			"subtitle": "Le flamants indémodable.",
+			"categories": ["passion-kitsch"],
+			"image": "/assets/images/articles/article_flamant/image2.jpg",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
 			"content": [
-				"Lorem ipsum dolor sit amet,",
-				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+				"Ananas, palmiers, et maintenant flamants roses, ... L'imprimé exotique revient en force dans nos intérieurs pour leur donner du pep's et de la fantaisie. En noir et blanc ou coloré, cet imprimé suggère une décoration vintage, tantôt chic, tantôt kitsch, tout dépend comment on l'emploie. Sur le papier peint ou les accessoires déco, le flamant rose est idéal pour une décoration rétro aux accents vintage. Mais détrompez-vous, le flamant rose peut aussi se trouver dans des intérieurs très chics et sophistiqués... En images, quelques inspirations dénichées sur Pinterest...",
+				"<div class='row'><img src='/assets/images/articles/article_flamant/art_de_la_table_flamingo.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_flamant/coussin_rose_orange_bleu_imprime_flamant_rose.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_flamant/flamant_rose_deco_vintage.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_flamant/flamant_rose_flamingo_deco_blanche_design.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_flamant/papier_peint_bleu_et_rose_flamant_rose.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_flamant/papier_peint_flamant_rose_deco_girly_vintage.jpg' class='half-size-picture portrait'/></div>"
 			]
 		},
 		{
 			"id": 7,
-			"title": "Article 7",
-			"author": "Author 7",
-			"subtitle": "Subtitle 7",
-			"categories": ["cuisine", "insolites","interieurs"],
-			"image": "/assets/images/538.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
+			"title": "Le loft le plus kitsch de Paris ?",
+			"author": "Clémence Leboulanger - Elle",
+			"subtitle": "Le loft le plus kitsch de Paris ?",
+			"categories": ["sejour", "salle-de-bain","cuisine","interieurs"],
+			"image": "/assets/images/articles/article_7/Le-loft-le-plus-kitsch-de-Paris.jpg",
+			"description": "Dans son loft parisien, Hervé Lopez, fondateur de la maison de production Lord of Barbès, remixe, avec humour, esprit anglo-indien, style factory et esthétique kitsch. Des trouvailles et des idées qui sortent du chapeau d’un vrai Sir parisien.",
 			"content": [
-				"Lorem ipsum dolor sit amet,",
-				"<div class='row'><img src='/assets/images/1787.jpg' class='half-size-picture paysage'/><img src='/assets/images/1788.jpg' class='half-size-picture paysage'/><img src='/assets/images/1790.jpg' class='complete-size-picture paysage'/></div>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?",
-				"<div class='row'><img src='/assets/images/1791.jpg' class='complete-size-picture paysage'/><img src='/assets/images/1793.jpg' class='half-size-picture portrait'/><img src='/assets/images/1915.jpg' class='half-size-picture portrait'/></div>",
-				"Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
-			]
-		},
-		{
-			"id": 8,
-			"title": "Article 8",
-			"author": "Author 8",
-			"subtitle": "Subtitle 8",
-			"categories": ["cuisine"],
-			"image": "/assets/images/1790.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": [
-				"Lorem ipsum dolor sit amet,",
-				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
-			]
-		},
-		{
-			"id": 9,
-			"title": "Article 9",
-			"author": "Author 9",
-			"subtitle": "Subtitle 9",
-			"categories": ["insolites"],
-			"image": "/assets/images/chaise-rouge.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": [
-				"Lorem ipsum dolor sit amet,",
-				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
-			]
-		},
-		{
-			"id": 10,
-			"title": "Article 10",
-			"author": "Author 10",
-			"subtitle": "Subtitle 10",
-			"categories": ["passion-kitsch", "insolites","interieurs"],
-			"image": "/assets/images/Sans titre - 1.png",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": [
-				"Lorem ipsum dolor sit amet,",
-				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
-			]
-		},
-		{
-			"id": 11,
-			"title": "Article 11",
-			"author": "Author 11",
-			"subtitle": "Subtitle 11",
-			"categories": ["passion-kitsch"],
-			"image": "/assets/images/articles/astuce_1/cabinet-liqueur-tv-01-art.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime velit possimus unde repudiandae, beatae reiciendis totam saepe accusantium architecto excepturi mollitia ab, fugiat repellendus consectetur ad omnis, ipsum earum recusandae.",
-			"content": [
-				"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores sit eum dolor, molestias aliquid eligendi, fuga atque sint neque nihil consequuntur sequi tenetur cum maxime architecto natus reprehenderit ipsam deserunt!"
-			]
-		},
-		{
-			"id": 12,
-			"title": "Article 12",
-			"author": "Author 12",
-			"subtitle": "Subtitle 12",
-			"categories": ["passion-kitsch", "insolites","interieurs"],
-			"image": "/assets/images/1791.jpg",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro aliquam, harum minima quaerat blanditiis error modi quidem animi hic explicabo deserunt cumque impedit dolorem recusandae quibusdam tempore repellendus?",
-			"content": [
-				"Lorem ipsum dolor sit amet,",
-				"<img src='/assets/images/538.jpg' class='complete-size-picture paysage'/>",
-				"consectetur adipisicing elit. Odit eos, iste facere perferendis illum sint corrupti quod dolores, aspernatur similique quo perspiciatis dignissimos maxime officiis mollitia ex, voluptas consequuntur provident?"
+				"<div class='row'><img src='/assets/images/articles/article_7/Le-coin-bar-du-salon.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_7/L-escalier-peint-en-noir.jpg' class='half-size-picture portrait'/></div>",
+				"« Sans vouloir jouer les passéistes, j’ai un faible pour les meubles d’antan, raconte Hervé Lopez. Tous, ici, ont été chinés. Pour créer l’unité entre des provenances, des époques et des styles différents, je les ai tous repeints en noir. J’aime l’esprit Napoléon III et, je le confesse, je collectionne les objets religieux. J’adorerais créer un restaurant où les sièges seraient des prie-Dieu. » A bon entendeur.",
+				"Les Sept Nains au complet montent la garde dans l’escalier peint en noir. Trophée  en tête de cerf factice, créé par Alain Roussel pour un film. Sélection de tableaux présentés lors de “Mort à Barbès”, exposition organisée chaque année : ici, œuvres de Tomahawk, Freak City et Florian Schommer. Portant chiné.",
+				"<div class='row'><img src='/assets/images/articles/article_7/La-cuisine-vitree.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_7/Les-toilettes-en-noir.jpg' class='half-size-picture portrait'/></div>",
+				"Ce fan de récup’ a transformé une ancienne glacière de boucherie  américaine en réfrigérateur. Sur le comptoir repeint en noir et argent, une collection de flacons créée pour un projet de cuvée de gin estampillé Lord of Barbès. La chambre, sur la mezzanine, a une vue plongeante sur la pièce principale.",
+				"Le Lord confesse réviser ses verbes irréguliers dans sa boîte noire. Extraits de collections de pipes, crucifix et coucous suisses.",
+				"<div class='row'><img src='/assets/images/articles/article_7/La-chambre-dans-une-alcove.jpg' class='complete-size-picture paysage'/></div>",
+				"Les collections colonisent toutes les pièces du loft. Dans la chambre, traitée comme une alcôve, les coucous suisses  et le lit (il était bleu layette !) ont été repeints en noir. A gauche, projecteur portable 16 mm des armées. Tête de coiffeur. A droite, un cartonnier chiné.",
+				"<div class='row'><img src='/assets/images/articles/article_7/Le-loft-le-plus-kitsch-de-Paris.jpg' class='complete-size-picture paysage'/></div>",
+				"Tous les meubles chinés ont été peints dans une teinte ébène  pour créer une unité et faire écho à la structure industrielle du lieu : banquette angloindienne, canapé rococo des années 1900, grande table de la bibliothèque de France et longue console. Suspensions industrielles chinées. Dans le fond, tableaux de maharadjahs du XIXe siècle."
 			]
 		}
 	]
