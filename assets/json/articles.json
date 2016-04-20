@@ -162,7 +162,7 @@
 			"title": "Les chambres de Karim",
 			"author": "KitschMan",
 			"subtitle": "Les chambres de Karim",
-			"categories": ["chambre","interieurs", "passion-kitsch"],
+			"categories": ["chambre","interieurs"],
 			"image": "/assets/images/articles/article_9/391.jpg",
 			"description": "Une fois n'est pas coutume, allons découvrir quelques design du grand Karim Rashid. Donc découvrons une ou deux chambres, pour faire de beaux rêves.",
 			"content": [
@@ -176,7 +176,7 @@
 			"title": "RetRose",
 			"author": "KitschMan",
 			"subtitle": "Mais qu'est-ce-qu'on peut faire avec du rose ?",
-			"categories": ["chambre","interieurs", "passion-kitsch"],
+			"categories": ["chambre","interieurs"],
 			"image": "/assets/images/articles/article_10/pink-bathroom.jpg",
 			"description": "Continuons dans 'comment on peut utiliser une couleur' avec quelque inspirations.",
 			"content": [
@@ -186,6 +186,25 @@
 				"<div class='row'><img src='/assets/images/articles/article_10/Modern-Pink-Bathroom-Design.jpeg' class='complete-size-picture paysage'/></div>",
 				"<div class='row'><img src='/assets/images/articles/article_10/vintage-pink-kitsch-bathroom.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_10/b1001602e18fb12ba861d176453f72df.jpg' class='half-size-picture portrait'/></div>",
 				"<div class='row'><img src='/assets/images/articles/article_10/vintage-pink-kitsch-bathroom.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_10/decoracion-color1.jpg' class='half-size-picture portrait'/></div>"
+			]
+		},
+		{
+			"id": 11,
+			"title": "Maison Futuro",
+			"author": "KitschMan",
+			"subtitle": "Mais qu'est-ce-qu'on peut faire avec du rose ?",
+			"categories": ["insolites"],
+			"image": "/assets/images/articles/insolite_1/Futuro_house_Warrington.JPG",
+			"description": "La Futuro ou Maison Futuro est un habitat préfabriqué conçu par le finlandais Matti Suuronen.",
+			"content": [
+				"Elle a été construite à une centaine d’exemplaires entre la fin des années 1960 et le début des années 1970. Sa forme distinctive dans le style des soucoupes volantes et son entrée en sas d’avion rendent cette construction très populaire chez les collectionneurs.",
+				"Sa surface habitable est de 50 m², son volume de 140 m3 est divisible pour son aménagement intérieur. Démontable et remontable en deux jours, elle est transportable et ne nécessite qu’un espace pour la poser de 3m de haut et 8m de diamètre.",
+				"Voyons un peu",
+				"<div class='row'><img src='/assets/images/articles/insolite_1/Stand-71-13.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/insolite_1/puces-st-ouen_25.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/insolite_1/CAM00116.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/insolite_1/futuro-house-marchc3a9-dauphine-1.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/insolite_1/puces-st-ouen_24.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/insolite_1/Futurepod4.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/insolite_1/5851fbf46ba10cf1181bbfb3f8aa18e2.jpg' class='half-size-picture paysage'/></div>"
 			]
 		}
 	]
