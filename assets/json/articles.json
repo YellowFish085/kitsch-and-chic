@@ -141,6 +141,52 @@
 				"<div class='row'><img src='/assets/images/articles/article_7/Le-loft-le-plus-kitsch-de-Paris.jpg' class='complete-size-picture paysage'/></div>",
 				"Tous les meubles chinés ont été peints dans une teinte ébène  pour créer une unité et faire écho à la structure industrielle du lieu : banquette angloindienne, canapé rococo des années 1900, grande table de la bibliothèque de France et longue console. Suspensions industrielles chinées. Dans le fond, tableaux de maharadjahs du XIXe siècle."
 			]
+		},
+		{
+			"id": 8,
+			"title": "RetrOrange",
+			"author": "KitschMan",
+			"subtitle": "Mais qu'est-ce-qu'on peut faire avec du orange ?",
+			"categories": ["salle-de-bain","interieurs"],
+			"image": "/assets/images/articles/article_8/moderne-salle-de-bain.jpg",
+			"description": "Très mode dans les années 60, l'orange a connu un passage à vide tendant plutôt vers le kistch.",
+			"content": [
+				"Depuis une dizaine d’années, c’est le symbole de la communication et de la créativité. Il éveille les sens et met de bonne humeur. On le retrouve de plus en plus en total look sur les murs des cuisines ou des salle de bains (cf. sa couleur complémentaire est le bleu) ou par touche ici et là pour un style pop.",
+				"<div class='row'><img src='/assets/images/articles/article_8/clectique-salle-de-bain.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/article_8/vinategfoyer_080915106.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_8/4.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_8/P1000327bath.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/article_8/realisation_salle_de_bain_dijon_001.jpg' class='half-size-picture paysage'/></div>"
+			]
+		},
+		{
+			"id": 9,
+			"title": "Les chambres de Karim",
+			"author": "KitschMan",
+			"subtitle": "Les chambres de Karim",
+			"categories": ["chambre","interieurs", "passion-kitsch"],
+			"image": "/assets/images/articles/article_9/391.jpg",
+			"description": "Une fois n'est pas coutume, allons découvrir quelques design du grand Karim Rashid. Donc découvrons une ou deux chambres, pour faire de beaux rêves.",
+			"content": [
+				"<div class='row'><img src='/assets/images/articles/article_9/4520.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_9/4522.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_9/4091.jpg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_9/5887.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/article_9/5894.jpg' class='half-size-picture portrait'/></div>"
+			]
+		},
+		{
+			"id": 10,
+			"title": "RetRose",
+			"author": "KitschMan",
+			"subtitle": "Mais qu'est-ce-qu'on peut faire avec du rose ?",
+			"categories": ["chambre","interieurs", "passion-kitsch"],
+			"image": "/assets/images/articles/article_10/pink-bathroom.jpg",
+			"description": "Continuons dans 'comment on peut utiliser une couleur' avec quelque inspirations.",
+			"content": [
+				"Mélange de rouge et de blanc, le rose est une couleur subtile. Symbole de la féminité, du romantisme et de la séduction, il illustre la douceur, la délicatesse dans des tons « rose bonbon » et le pep’s dans des tons plus soutenus comme le fushia. On le retrouve souvent dans les chambres pour son côté à la fois chaud et apaisant.",
+				"<div class='row'><img src='/assets/images/articles/article_10/vinategfoyer_080915100.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_10/Salle-à-manger-rose-kitch-vintage-mgt9bapy1yqzgej6ji3j89mfavkp3923ep1wlwejo0.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_10/G_04946_art.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/article_10/kitsch-bathroom-rgb.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_10/Modern-Pink-Bathroom-Design.jpeg' class='complete-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_10/vintage-pink-kitsch-bathroom.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_10/b1001602e18fb12ba861d176453f72df.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_10/vintage-pink-kitsch-bathroom.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_10/decoracion-color1.jpg' class='half-size-picture portrait'/></div>"
+			]
 		}
 	]
 }

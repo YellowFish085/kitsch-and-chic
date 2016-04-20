@@ -55,10 +55,10 @@ var App = function(datas) {
 					nbArticle = 5
 					break
 				case "astuces":
-					nbArticle = 3
+					nbArticle = 2
 					break
 				case "createurs":
-					nbArticle = 2
+					nbArticle = 3
 					break
 				case "insolites":
 					nbArticle = 2
