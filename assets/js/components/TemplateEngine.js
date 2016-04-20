@@ -20,7 +20,10 @@ var TemplateEngine = (function() {
 		}
 
 		function getLinktemplate(datas, htmlClass = "") {
-			var template = '<a href="' + URL_base + '{{{datas.url}}}" title="{{{datas.title}}}" class="{{{htmlClass}}}">{{{datas.title}}}</a>'
+			if (!datas.content) {
+				datas.content = datas.title
+			}
+			var template = '<a href="' + URL_base + '{{{datas.url}}}" title="{{{datas.title}}}" class="{{{htmlClass}}}">{{{datas.content}}}</a>'
 			Mustache.parse(template)
 			return Mustache.render(template, {"datas": datas, "htmlClass": htmlClass})
 		}
@@ -180,7 +183,7 @@ var TemplateEngine = (function() {
 		function renderHtmlTemplate(datas) {
 			var template 	= '<div class="wrapper">'
 										+ '	{{{main-header}}}'
-										+ '	<div id="content"></div>'
+										+ '	<div id="content" class="container"></div>'
 										+ '	<div class="push"></div>'
 										+ '</div>'
 										+ '{{{main-footer}}}'
@@ -210,10 +213,12 @@ var TemplateEngine = (function() {
 													+ '	<div class="container">'
 													+ '		<div class="row">'
 													+ '			<div class="main-header-logo col-sm-3 col-md-4 hidden-xs">'
-													+ ' 			<img src="' + URL_base + '/assets/images/kitsch_and_chic_logo.png" />'
+													+ 				getLinktemplate({"url": '', "title": ''})
+													+ '				<img src="' + URL_base + '/assets/images/kitsch_and_chic_logo.png" />'
 													+ '			</div>'
 													+ '			<div class="main-header-logo-mobile col-sm-3 col-md-4 visible-xs hidden-sm">'
-													+ ' 			<img src="' + URL_base + '/assets/images/kitsch_and_chic_logo_mobile.png" />'
+													+ 				getLinktemplate({"url": '', "title": ''})
+													+ '				<img src="' + URL_base + '/assets/images/kitsch_and_chic_logo_mobile.png" />'
 													+ '			</div>'
 													+ '			<div class="main-header-nav col-sm-9 col-md-8 col-xs-12">{{{nav}}}</div>'
 													+ '			<div class="main-header-nav-bg absolute-in-row hidden-xs"></div>'
@@ -250,6 +255,7 @@ var TemplateEngine = (function() {
 			var navItemDropdownTemplate = '<li>'
 																	+ '	<span type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
 						    									+ '		{{title}}'
+						    									+ '		<div class="arrow-down"></div>'
 						  										+ '	</span>'
 						  										+ '	<ul class="dropdown-menu">{{{dropdown-content}}}</ul>'
 						  										+ '</li>'
@@ -273,7 +279,9 @@ var TemplateEngine = (function() {
 
 		function getHeaderArticleTemplate(article) {
 			var template 	= '<div class="main-header-highlight-article">'
-																				+ ' <div class="main-header-highlight-img-container">{{#image}}<img src="' + URL_base + '{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}</div>'
+										+ ' <div class="main-header-highlight-img-container">'
+										+ '		{{#image}}<img src="' + URL_base + '{{image}}" alt="{{title}}" title="{{title}}" class="img-responsive" />{{/image}}'
+										+ '	</div>'
 										+ '	<div class="main-header-highlight-article-text">'
 										+ '		{{{link}}}'
 										+ '		<span class="main-header-highlight-article-text-author">{{author}}</span>'
