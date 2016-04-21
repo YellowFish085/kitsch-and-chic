@@ -110,7 +110,8 @@ var App = function(datas) {
 		}
 	}
 
-	var displayArticle = function(id) {
+	var displayArticle = function(slug) {
+		var id = /[^-]*$/.exec(slug)[0]
 		var article = Article.getInstance().find(id)
 		if (article) {
 			TemplateEngine.getInstance().renderTemplate('article', article)

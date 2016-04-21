@@ -292,7 +292,7 @@ var TemplateEngine = (function() {
 
 			article.link = getLinktemplate(
 				{
-					"url": '/article/' + article.id,
+					"url": '/article/' + article.slug + '-' + article.id,
 					"title": article.title
 				}, "hvr hvr-bubble-float-left main-header-highlight-article-text-title")
 
@@ -367,7 +367,7 @@ var TemplateEngine = (function() {
 					else sizeCols = 4;
 				}
 
-				article.link = getLinktemplate({'url': '/article/' + article.id, 'title': article.title})
+				article.link = getLinktemplate({'url': '/article/' + article.slug + '-' + article.id, 'title': article.title})
 				
 				articlesRendered += Mustache.render(articleTemplate, {"article": article, "sizeCols": sizeCols})
 			})
