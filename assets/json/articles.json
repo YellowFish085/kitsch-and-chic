@@ -217,6 +217,35 @@
 				"<div class='row'><img src='/assets/images/articles/insolite_1/puces-st-ouen_24.jpg' class='complete-size-picture paysage'/></div>",
 				"<div class='row'><img src='/assets/images/articles/insolite_1/Futurepod4.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/insolite_1/5851fbf46ba10cf1181bbfb3f8aa18e2.jpg' class='half-size-picture paysage'/></div>"
 			]
+		},
+		{
+			"id": 12,
+			"title": "Du kitsch à haute dose",
+			"author": "Philippe Seulliet - Côté Maison",
+			"subtitle": "L'appartement intime de Pierre et Gilles",
+			"categories": ["passion-kitsch", "interieurs", "sejour", "chambre"],
+			"image": "/assets/images/articles/article_12/Pierre-et-Gilles-unis-pour-la-ville.jpg",
+			"description": "Visite exclusive chez Pierre et Gilles dont l'univers intime s'harmonise avec leur oeuvre synonyme d'onirisme érotico-sentimental et de fausse naïveté... ",
+			"content": [
+				"<div class='row'><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-3_4620762.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-4_4620764.jpg' class='half-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais_4614854.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-1_4620758.jpg' class='half-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-2_4620760.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-5_4620766.jpg' class='half-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-9_4620774.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/article_12/chez-pierre-et-gilles-au-pre-saint-gervais-8_4620772.jpg' class='half-size-picture portrait'/></div>"
+			]
+		},
+		{
+			"id": 13,
+			"title": "Le Gundam pour les vrais",
+			"author": "KitschMan",
+			"subtitle": "Un Gundam pour les hommes les vrais",
+			"categories": ["insolites"],
+			"image": "/assets/images/articles/insolite_2/female_gundam04.jpg",
+			"description": "On peut entendre parfois que les mangas, les meca et tout, c'est plutôt pour les hommes. De même, ce ne serait pas très délicat. Eh bien non. La preuve avec ce Gundam.",
+			"content": [
+				"<div class='row'><img src='/assets/images/articles/insolite_2/gundam-pink-barbie-mode-anime-manga-tv-streaming-legal-gratuit-05.jpg' class='half-size-picture paysage'/><img src='/assets/images/articles/insolite_2/pink-gundam3.jpg' class='half-size-picture paysage'/></div>",
+				"<div class='row'><img src='/assets/images/articles/insolite_2/핑크총_3.jpg' class='complete-size-picture portrait'/></div>",
+				"<div class='row'><img src='/assets/images/articles/insolite_2/tumblr_ms0rhw6ZN91qak3sjo1_1280.jpg' class='half-size-picture portrait'/><img src='/assets/images/articles/insolite_2/핑크총_2.jpg' class='half-size-picture portrait'/></div>"
+			]
 		}
 	]
 }
