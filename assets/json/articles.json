@@ -201,6 +201,7 @@
 		{
 			"id": 11,
 			"title": "Maison Futuro",
+			"slug": "Maison-Futuro",
 			"author": "KitschMan",
 			"subtitle": "Mais qu'est-ce-qu'on peut faire avec du rose ?",
 			"categories": ["insolites"],
