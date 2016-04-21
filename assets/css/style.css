@@ -48,6 +48,7 @@ html, body, #app {
 
 body {
 	background-image: url('/assets/images/bg.jpg');
+	font-family: 'Raleway';
 }
 
 .wrapper {
